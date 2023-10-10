@@ -1,29 +1,17 @@
-<html>
-<title>Welcome API Test</title>  
-const apiKey = 'GU9Zx0b21jFQaVWBjRk-d2InTTB0Q1dUSkROa2hQTkZKNWVtSmpjbWh1WlRaalZVWksn'; 
-const apiUrl = 'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2023-01-01 to 2023-04-31]&page_length=500&page=1';
-
-// Create headers for the API request
-const headers = {
-  Authorization: `Bearer ${apiKey}`
-};
-
-// Make the GET request to the JWPlayer API
-fetch(apiUrl, { headers })
-  .then(response => {
-    if (!response.ok) {
-      throw new Error(`HTTP error! Status: ${response.status}`);
-    }
-    return response.json();
-  })
-  .then(data => {
-    // Handle the API response data here
-    console.log('API Response:', data);
-  })
-  .catch(error => {
-    console.error('API Request Error:', error);
-  });
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JWPlayer API Data</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>JWPlayer API Data</h1>
+    <button id="fetchData">Fetch Data</button>
+    <div id="result"></div>
+    <script src="script.js"></script>
+</body>
 </html>
 
 
