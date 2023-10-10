@@ -1,0 +1,26 @@
+const apiKey = 'GU9Zx0b21jFQaVWBjRk-d2InTTB0Q1dUSkROa2hQTkZKNWVtSmpjbWh1WlRaalZVWksn'; // Replace with your JWPlayer API key
+const apiUrl = 'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2023-01-01 TO 2023-04-31]&page_length=500&page=1';
+
+// Create headers for the API request
+const headers = {
+  Authorization: `Bearer ${apiKey}`
+};
+
+// Make the GET request to the JWPlayer API
+fetch(apiUrl, { headers })
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+    return response.json();
+  })
+  .then(data => {
+    // Handle the API response data here
+    console.log('API Response:', data);
+  })
+  .catch(error => {
+    console.error('API Request Error:', error);
+  });
+
+
+
