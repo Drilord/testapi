@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = 'GU9Zx0b21jFQaVWBjRk-d2InTTB0Q1dUSkROa2hQTkZKNWVtSmpjbWh1WlRaalZVWksn'; // Replace with your JWPlayer API key
-    let apiUrl = 'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2023-01-01 TO 2023-04-31]&page_length=7000&page=1';
+    let apiUrl = 'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2022-01-01 TO 2023-04-31]&page_length=7000&page=1';
     
     const fetchDataButtonFirst4 = document.getElementById('fetchFirst4');
     const fetchDataButtonNext4 = document.getElementById('fetchNext4');
