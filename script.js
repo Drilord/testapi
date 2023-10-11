@@ -13,16 +13,38 @@ document.addEventListener('DOMContentLoaded', () => {
         })
             .then(response => {
                 if (!response.ok) {
-                    throw new Error(`HTTP error! Status: ${response.status}`);
+                    throw an Error(`HTTP error! Status: ${response.status}`);
                 }
                 return response.json();
             })
             .then(data => {
-                // Handle the API response data
-                resultDiv.innerHTML = JSON.stringify(data, null, 2);
+                // Count the production types and display
+                const productionTypes = countProductionTypes(data);
+                resultDiv.innerHTML = displayProductionTypes(productionTypes);
             })
             .catch(error => {
                 resultDiv.innerHTML = `API Request Error: ${error}`;
             });
     });
+
+    function countProductionTypes(data) {
+        const productionTypeCounts = {};
+        data.forEach(item => {
+            const productionType = item.productionType;
+            if (productionTypeCounts.hasOwnProperty(productionType)) {
+                productionTypeCounts[productionType]++;
+            } else {
+                productionTypeCounts[productionType] = 1;
+            }
+        });
+        return productionTypeCounts;
+    }
+
+    function displayProductionTypes(productionTypes) {
+        let output = 'Production Types and Counts:<br>';
+        for (const type in productionTypes) {
+            output += `${type}: ${productionTypes[type]}<br>`;
+        }
+        return output;
+    }
 });
