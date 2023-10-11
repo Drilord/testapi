@@ -23,21 +23,51 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    document.getElementById('fetchFirst4').addEventListener('click', () => {
-        const apiUrl =
-            'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2021-01-01 TO 2021-04-31]&page_length=10000&page=1';
-        fetchData(apiUrl);
-    });
-
-    document.getElementById('fetchNext4').addEventListener('click', () => {
+    document.getElementById('21mayaug').addEventListener('click', () => {
         const apiUrl =
             'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2021-05-01 TO 2021-08-31]&page_length=10000&page=1';
         fetchData(apiUrl);
     });
 
-    document.getElementById('fetchLast4').addEventListener('click', () => {
+    document.getElementById('21sepdec').addEventListener('click', () => {
         const apiUrl =
             'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2021-09-01 TO 2021-12-31]&page_length=10000&page=1';
+        fetchData(apiUrl);
+    });
+
+    document.getElementById('22janapr').addEventListener('click', () => {
+        const apiUrl =
+            'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2022-01-01 TO 2022-04-31]&page_length=10000&page=1';
+        fetchData(apiUrl);
+    });
+    
+    document.getElementById('22mayaug').addEventListener('click', () => {
+        const apiUrl =
+            'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2022-05-01 TO 2022-08-31]&page_length=10000&page=1';
+        fetchData(apiUrl);
+    });
+
+    document.getElementById('22sepdec').addEventListener('click', () => {
+        const apiUrl =
+            'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2022-09-01 TO 2022-12-31]&page_length=10000&page=1';
+        fetchData(apiUrl);
+    });
+
+    document.getElementById('23janapr').addEventListener('click', () => {
+        const apiUrl =
+            'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2023-01-01 TO 2023-04-31]&page_length=10000&page=1';
+        fetchData(apiUrl);
+    });
+    
+    document.getElementById('23mayaug').addEventListener('click', () => {
+        const apiUrl =
+            'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2023-05-01 TO 2023-08-31]&page_length=10000&page=1';
+        fetchData(apiUrl);
+    });
+
+    document.getElementById('23sepdec').addEventListener('click', () => {
+        const apiUrl =
+            'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2023-09-01 TO 2023-12-31]&page_length=10000&page=1';
         fetchData(apiUrl);
     });
 
