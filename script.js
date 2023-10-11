@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         data.forEach((item) => {
             const customParams = item.metadata.custom_params;
             if (customParams && customParams.productionType) {
-                const productionType = customParams.productionType;
+                const productionType = customParams.pubDate;
                 if (productionTypeCounts.hasOwnProperty(productionType)) {
                     productionTypeCounts[productionType]++;
                 } else {
@@ -88,9 +88,9 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function displayProductionTypes(productionTypes) {
-        let output = 'Production Types and Counts:<br>';
+        let output = 'Pub Dates and Counts:<br>';
         for (const type in productionTypes) {
-            output += `type: ${type} count: ${productionTypes[type]}<br>`;
+            output += `Pub Date: ${type} count: ${productionTypes[type]}<br>`;
         }
         return output;
     }
