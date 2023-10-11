@@ -19,13 +19,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                // Count the production types and display
-                const productionTypes = countProductionTypes(data);
+                console.log(data); // Add this line for debugging
+            if (Array.isArray(data.media)) {
+                const productionTypes = countProductionTypes(data.media);
                 resultDiv.innerHTML = displayProductionTypes(productionTypes);
-            })
-            .catch(error => {
-                resultDiv.innerHTML = `API Request Error: ${error}`;
-            });
+            } else {
+                resultDiv.innerHTML = 'API Response is not an array';
+            }
+        })
+        .catch(error => {
+            resultDiv.innerHTML = `API Request Error: ${error}`;
+        });
     });
 
     function countProductionTypes(data) {
