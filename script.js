@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function countProductionTypes(data) {
         const productionTypeCounts = {};
-        data.forEach(item => {
+        data.media.metadata.custom_params.forEach(item => {
             const productionType = item.productionType;
             if (productionTypeCounts.hasOwnProperty(productionType)) {
                 productionTypeCounts[productionType]++;
