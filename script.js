@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                const productionTypes = countProductionTypes(data.media.metadata.custom_params);
+                const productionTypes = countProductionTypes(data.media.metadata.custom_params.productionType);
                 resultDiv.innerHTML = displayProductionTypes(productionTypes);
             })
             .catch(error => {
