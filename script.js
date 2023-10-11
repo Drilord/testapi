@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', () => {
     const apiKey = 'GU9Zx0b21jFQaVWBjRk-d2InTTB0Q1dUSkROa2hQTkZKNWVtSmpjbWh1WlRaalZVWksn'; // Replace with your JWPlayer API key
     const apiUrl = 'https://api.jwplayer.com/v2/sites/MHI47Cs9/media/?q=created:[2023-01-01 TO 2023-04-31]&page_length=500&page=1';
@@ -19,37 +18,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(data => {
-                console.log(data); // Add this line for debugging
-            if (Array.isArray(data.media)) {
-                const productionTypes = countProductionTypes(data.media);
-                resultDiv.innerHTML = displayProductionTypes(productionTypes);
-            } else {
-                resultDiv.innerHTML = 'API Response is not an array';
-            }
-        })
-        .catch(error => {
-            resultDiv.innerHTML = `API Request Error: ${error}`;
-        });
+                // Handle the API response data
+                resultDiv.innerHTML = JSON.stringify(data, null, 2);
+            })
+            .catch(error => {
+                resultDiv.innerHTML = `API Request Error: ${error}`;
+            });
     });
-
-    function countProductionTypes(data) {
-        const productionTypeCounts = {};
-        data.forEach(item => {
-            const productionType = item.productionType;
-            if (productionTypeCounts.hasOwnProperty(productionType)) {
-                productionTypeCounts[productionType]++;
-            } else {
-                productionTypeCounts[productionType] = 1;
-            }
-        });
-        return productionTypeCounts;
-    }
-
-    function displayProductionTypes(productionTypes) {
-        let output = 'Production Types and Counts:<br>';
-        for (const type in productionTypes) {
-            output += `${type}: ${productionTypes[type]}<br>`;
-        }
-        return output;
-    }
 });
