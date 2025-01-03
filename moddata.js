@@ -1,6 +1,6 @@
 const fs= require('fs');
 
-//estas operaciones son async
+/*/estas operaciones son async
 //read
 fs.readFile('README.md','utf-8',(err, data)=>{
  if(err){console.log('hubo pedo al leer el archivo', err);}
@@ -30,7 +30,7 @@ fs.unlink('nomnrearch',(err)=>{
 });
 
 //hay la version de sync
-fs.readFileSync('README.md','utf-8');
+fs.readFileSync('README.md','utf-8');*/
 
 //Este otro modulo es mas especifico para JSON
 const jsonfile = require('jsonfile');
@@ -54,8 +54,7 @@ async function updateModelPrice(filePath, modelName, newPrice) {
     console.error('Error updating JSON:', err);
   }
 }
-
 // Example usage
-const filePath = 'your_file_path.json'; 
-updateModelPrice(filePath, "modelo2", 165); 
-updateModelPrice(filePath, "modelo1", 130); // Update another model
+const filePath = 'deleteLater.json'; 
+updateModelPrice(filePath, "modelo2", 520); 
+updateModelPrice(filePath, "modelo1", 451); // Update another model
