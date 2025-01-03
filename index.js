@@ -18,7 +18,7 @@ exp.get('/bombSol', async (req, res)=>{
     console.log(req.url);
     try {
         const data = await readjson('datos.json');
-        console.log(data); // despues de leer
+        //console.log(data); // despues de leer
         res.send(JSON.stringify(data)); 
       } catch (error) {
         console.error('Error leyendo el archivo json:', error);
@@ -31,12 +31,33 @@ exp.get('/cots', async (req, res)=>{
     console.log(req.url);
     try {
         const data = await readjson('cots.json')
-        console.log(data); // despues de leer
+        //console.log(data); // despues de leer
         res.send(JSON.stringify(data)); 
       } catch (error) {
         console.error('Error leyendo el archivo json:', error);
         res.status(500).send('Error al leer los datos');
       }
+});
+
+exp.get('/vende/:user/:pwd', async (req, res)=>{
+  console.log(req.url);
+  const pw =req.params.user;
+  const usr=req.params.pwd;
+  try {
+      const data = await readjson('vende.json')
+      console.log(data); // despues de leer
+      const vend= data.vendedores.filter(rep=> rep.mail===usr && rep.pw=== pw)
+      authid=vend.id
+      if(vend.leght===0){
+        res.status(404).send('Usuario o password no validos');
+            
+      } 
+      res.send(authid); 
+
+    } catch (error) {
+      console.error('Error leyendo el archivo json:', error);
+      res.status(500).send('Error al leer los datos');
+    }
 });
 
  const PORT = process.env.PORT|| 3000;

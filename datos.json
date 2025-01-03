@@ -17,16 +17,19 @@
   },
  "vendedores":[
     {
-      "nombre": "Weslaco Energías Renovables",
+      "id": "1",
+      "nombre": "Wenceslao Silva",
       "tel": "(332)8197749",
       "mail": "info@weslaco.com.mx"
     },
-    {
+    { 
+      "id": "2",
       "nombre": "Jose Carlos Barrera Sepúlveda",
       "tel": "(331)0418217",
-      "mail": "gerencia.ventas@weslaco.com.mx"
+      "mail": "gerencia.ventas@weslaco.com.mx"    
     },
     {
+      "id": "3",
       "nombre": "Edgar Pachely Godinez",
       "tel": "(342)1011664",
       "mail": "ingenieria@weslaco.com.mx"

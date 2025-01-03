@@ -1,0 +1,20 @@
+{
+    "vendedores":
+    [
+      {
+      "mail":"info@weslaco.com.mx",
+      "pw": "3328197749",
+      "id": "1"
+      },
+      {
+      "mail": "gerencia.ventas@weslaco.com.mx", 
+      "pw": "3310418217",
+      "id": "2"
+      },
+      {
+      "mail":"ingenieria@weslaco.com.mx",
+      "tel": "3421011664",
+      "id": "3"
+      }
+    ]
+}

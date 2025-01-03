@@ -33,11 +33,11 @@ fs.unlink('nomnrearch',(err)=>{
 fs.readFileSync('README.md','utf-8');*/
 
 //Este otro modulo es mas especifico para JSON
-const jsonfile = require('jsonfile');
+const jsf = require('jsonfile');
 
 async function updateModelPrice(filePath, modelName, newPrice) {
   try {
-    const data = await jsonfile.readFile(filePath);
+    const data = await jsf.readFile(filePath);
 
     // Find the model object
     const modelToUpdate = data.bomSol.bombas.Modelos.find(model => model.Modelo === modelName);
@@ -48,7 +48,7 @@ async function updateModelPrice(filePath, modelName, newPrice) {
     }
 
     // Write the updated data back to the file
-    await jsonfile.writeFile(filePath, data);
+    await jsf.writeFile(filePath, data);
 
   } catch (err) {
     console.error('Error updating JSON:', err);
