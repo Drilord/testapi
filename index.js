@@ -40,20 +40,33 @@ exp.get('/cots', async (req, res)=>{
 });
 
 exp.get('/vende/:user/:pwd', async (req, res)=>{
-  console.log(req.url);
-  const pw =req.params.user;
-  const usr=req.params.pwd;
+    const usr =req.params.user;
+    const pw=req.params.pwd;
+    console.log('pw var:',pw);
+    console.log('usr var:',usr);
   try {
       const data = await readjson('vende.json')
-      console.log(data); // despues de leer
-      const vend= data.vendedores.filter(rep=> rep.mail===usr && rep.pw=== pw)
-      authid=vend.id
-      if(vend.leght===0){
-        res.status(404).send('Usuario o password no validos');
-            
-      } 
-      res.send(authid); 
-
+      console.log('raw data',data); // despues de leer
+      const vend= data.vendedores.find(vendedor =>{
+        console.log('Checking vendedor:', vendedor); 
+        console.log('Checking vend.mail:', vendedor.mail,'vs usr:',usr); 
+        console.log('Checking vend.pw:', vendedor.pw,'vs pw:',pw); 
+        return vendedor.mail === usr && vendedor.pw === pw
+      });
+      console.log('vend:',vend);
+      let authid = (vend?.id ? vend?.id : 0);
+      console.log('authid:',authid);
+      if (typeof vend === 'undefined'){
+        console.log(" vend array invalid");
+        const token='invalid';
+        const auth= {token:token,id:null};
+        res.send(JSON.stringify(auth)); 
+         
+      }else{
+      const token="kjn34o8i67vyh9nlidz85b5SGVYHTDSVg54svshs5V$yVh4VYsfcg54sv45656456DRTGTHdrgDRTGdrg4356e"
+      const auth= {token:token,id:authid};
+      res.send(JSON.stringify(auth)); 
+    }  
     } catch (error) {
       console.error('Error leyendo el archivo json:', error);
       res.status(500).send('Error al leer los datos');
