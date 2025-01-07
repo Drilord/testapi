@@ -4,17 +4,27 @@
       {
       "mail":"info@weslaco.com.mx",
       "pw": "3328197749",
+      "auth":0,
       "id": "1"
       },
       {
       "mail": "gerencia.ventas@weslaco.com.mx", 
       "pw": "3310418217",
+      "auth":0,
       "id": "2"
       },
       {
       "mail":"ingenieria@weslaco.com.mx",
       "pw": "3421011664",
+      "auth":0,
       "id": "3"
+      }
+      ,
+      {
+      "mail":"direccion@weslaco.com.mx",
+      "pw": "3314455067",
+      "auth":1,
+      "id": "4"
       }
     ]
 }

@@ -18,7 +18,7 @@
  "vendedores":[
     {
       "id": "1",
-      "nombre": "Wenceslao Silva",
+      "nombre": "Weslaco Energías Renovables",
       "tel": "(332)8197749",
       "mail": "info@weslaco.com.mx"
     },
@@ -33,7 +33,14 @@
       "nombre": "Edgar Pachely Godinez",
       "tel": "(342)1011664",
       "mail": "ingenieria@weslaco.com.mx"
+    },
+    {
+      "id": "4",
+      "nombre": "Wenseslao Silva",
+      "tel": "(331)4455067",
+      "mail": "direccion@weslaco.com.mx"
     }
+    
  ], 
  "bombas": [
     { "lts":0.6,

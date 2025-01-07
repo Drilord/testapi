@@ -1,3 +1,4 @@
+let otp;
 const express = require('express');
 const jsf = require('jsonfile')
 const exp = express();
@@ -42,20 +43,12 @@ exp.get('/cots', async (req, res)=>{
 exp.get('/vende/:user/:pwd', async (req, res)=>{
     const usr =req.params.user;
     const pw=req.params.pwd;
-    console.log('pw var:',pw);
-    console.log('usr var:',usr);
-  try {
+    try {
       const data = await readjson('vende.json')
-      console.log('raw data',data); // despues de leer
       const vend= data.vendedores.find(vendedor =>{
-        console.log('Checking vendedor:', vendedor); 
-        console.log('Checking vend.mail:', vendedor.mail,'vs usr:',usr); 
-        console.log('Checking vend.pw:', vendedor.pw,'vs pw:',pw); 
-        return vendedor.mail === usr && vendedor.pw === pw
+         return vendedor.mail === usr && vendedor.pw === pw
       });
-      console.log('vend:',vend);
       let authid = (vend?.id ? vend?.id : 0);
-      console.log('authid:',authid);
       if (typeof vend === 'undefined'){
         console.log(" vend array invalid");
         const token='invalid';
@@ -72,7 +65,31 @@ exp.get('/vende/:user/:pwd', async (req, res)=>{
       res.status(500).send('Error al leer los datos');
     }
 });
+const rtdisc = express.Router();
+exp.use('/disc', rtdisc);
 
+rtdisc.get('/', async (req, res)=>{
+  otp = Math.random().toString(36).slice(2, 10);
+  const randAuth={otp:otp};
+  console.log('otp: ',otp);
+  res.send(JSON.stringify(randAuth)); 
+  
+});
+rtdisc.get('/:pwd', async (req, res)=>{
+    const pw=req.params.pwd;
+    console.log('pw var:',pw);
+    if (pw === otp){
+      console.log("if otp correct");
+      otp=Math.random().toString(36).slice(2, 10);
+      const auth= {token:'valid'};
+      res.send(JSON.stringify(auth));
+       
+    }else{
+    const auth= {token:'invalid'};
+    res.send(JSON.stringify(auth)); 
+  }  
+  
+});
  const PORT = process.env.PORT|| 3000;
  
 
