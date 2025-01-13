@@ -3,6 +3,7 @@ const express = require('express');
 const jsf = require('jsonfile')
 const exp = express();
 const cors = require('cors');
+const path = require('path'); 
 const vendePath = path.join(__dirname, '..', 'dt', 'vende.json');
 const bomPath = path.join(__dirname, '..', 'dt', 'datos.json');
 const cotsPath = path.join(__dirname, '..', 'dt', 'cots.json');
