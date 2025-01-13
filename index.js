@@ -3,11 +3,14 @@ const express = require('express');
 const jsf = require('jsonfile')
 const exp = express();
 const cors = require('cors');
+const vendePath = path.join(__dirname, '..', 'dt', 'vende.json');
+const bomPath = path.join(__dirname, '..', 'dt', 'datos.json');
+const cotsPath = path.join(__dirname, '..', 'dt', 'cots.json');
 
 exp.use(cors()); /*modificar despues para solo  dar acceso al container de nginx
 codigo de ejemplo:
 app.use(cors({
-  origin: 'http://localhost', // permite requests desde este origin
+  origin: 'http://nginx:3000', // permite requests desde este origin
   methods: 'GET, POST, PUT, DELETE', // especifica los methods
   allowedHeaders: ['Content-Type', 'Authorization'], // y los headers
 }));
@@ -18,7 +21,7 @@ app.use(cors({
 exp.get('/bombSol', async (req, res)=>{
     console.log(req.url);
     try {
-        const data = await readjson('datos.json');
+        const data = await readjson(bomPath);
         //console.log(data); // despues de leer
         res.send(JSON.stringify(data)); 
       } catch (error) {
@@ -31,7 +34,7 @@ exp.get('/bombSol', async (req, res)=>{
 exp.get('/cots', async (req, res)=>{
     console.log(req.url);
     try {
-        const data = await readjson('cots.json')
+        const data = await readjson(cotsPath)
         //console.log(data); // despues de leer
         res.send(JSON.stringify(data)); 
       } catch (error) {
@@ -44,20 +47,22 @@ exp.get('/vende/:user/:pwd', async (req, res)=>{
     const usr =req.params.user;
     const pw=req.params.pwd;
     try {
-      const data = await readjson('vende.json')
+      const data = await readjson(vendePath)
       const vend= data.vendedores.find(vendedor =>{
          return vendedor.mail === usr && vendedor.pw === pw
       });
-      let authid = (vend?.id ? vend?.id : 0);
+      let authid = (vend?.vendId ? vend?.vendId  : 0);
+      let authLevel = (vend?.auth ? vend?.auth  : 0);
       if (typeof vend === 'undefined'){
         console.log(" vend array invalid");
         const token='invalid';
-        const auth= {token:token,id:null};
+        const auth= {token:token,id:null,authL:null};
         res.send(JSON.stringify(auth)); 
          
       }else{
-      const token="kjn34o8i67vyh9nlidz85b5SGVYHTDSVg54svshs5V$yVh4VYsfcg54sv45656456DRTGTHdrgDRTGdrg4356e"
-      const auth= {token:token,id:authid};
+      //const token="kjn34o8i67vyh9nlidz85b5SGVYHTDSVg54svshs5V$yVh4VYsfcg54sv45656456DRTGTHdrgDRTGdrg4356e"
+      const token="valid";
+      const auth= {token:token,id:authid,authL:authLevel};
       res.send(JSON.stringify(auth)); 
     }  
     } catch (error) {
