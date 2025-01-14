@@ -77,7 +77,7 @@ exp.use('/disc', rtdisc);
 rtdisc.get('/', async (req, res)=>{
   otp = Math.random().toString(36).slice(2, 10);
   const randAuth={otp:otp};
-  console.log('otp: ',otp);
+  //console.log('otp: ',otp);
   res.send(JSON.stringify(randAuth)); 
   
 });
@@ -85,7 +85,6 @@ rtdisc.get('/:pwd', async (req, res)=>{
     const pw=req.params.pwd;
     console.log('pw var:',pw);
     if (pw === otp){
-      console.log("if otp correct");
       otp=Math.random().toString(36).slice(2, 10);
       const auth= {token:'valid'};
       res.send(JSON.stringify(auth));
