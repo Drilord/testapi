@@ -35,12 +35,12 @@ fs.readFileSync('README.md','utf-8');*/
 //Este otro modulo es mas especifico para JSON
 const jsf = require('jsonfile');
 
-async function updateModelPrice(filePath, modelName, newPrice) {
+async function updtMod(filePath, modelP, newPrice) {
   try {
     const data = await jsf.readFile(filePath);
 
     // Find the model object
-    const modelToUpdate = data.bomSol.bombas.Modelos.find(model => model.Modelo === modelName);
+    const modelToUpdate = data.bomSol.bombas.Modelos.find(model => model.Modelo === modelP);
 
     // Update the price
     if (modelToUpdate) {
@@ -53,8 +53,10 @@ async function updateModelPrice(filePath, modelName, newPrice) {
   } catch (err) {
     console.error('Error updating JSON:', err);
   }
-}
+}/*
 // Example usage
 const filePath = 'deleteLater.json'; 
-updateModelPrice(filePath, "modelo2", 520); 
-updateModelPrice(filePath, "modelo1", 451); // Update another model
+updtMod(filePath, "modelo2", 520); 
+updtMod(filePath, "modelo1", 451); // Update another model
+
+module.exports={updtModel:updtMod}*/

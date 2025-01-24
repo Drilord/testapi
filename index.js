@@ -1,4 +1,4 @@
-let otp, acsLv;
+let otp, acsLv,succ;
 const express = require('express');
 const jsf = require('jsonfile')
 const exp = express();
@@ -12,19 +12,18 @@ const crypto = require('crypto');
 const secretKey = crypto.randomBytes(64).toString('hex');
 const cookieParser = require('cookie-parser');
 const corsOptions = {
-  origin: 'https://localhost', // Only allow requests from your frontend
-  credentials: true, // Important for cookies
-};
-exp.use(cors(corsOptions)); /*modificar despues para solo  dar acceso al container de nginx por ahora al domain *******
+                       origin: 'https://localhost', // Only allow requests from your frontend
+                      credentials: true, // Important for cookies
+};/*modificar despues para solo  dar acceso al container de nginx por ahora al domain *******
 codigo de ejemplo:
 const corsOptions = {
   origin: 'http://nginx:3000', // permite requests desde este origin
   methods: 'GET, POST, PUT, DELETE', // especifica los methods
   allowedHeaders: ['Content-Type', 'Authorization'], // y los headers
-};
-
-*/
+};*/
+////////////////////////////////////////////////////////////
 //middleware  
+exp.use(cors(corsOptions)); 
 exp.use(express.json());
 exp.use(cookieParser());
 
@@ -35,22 +34,61 @@ const cots = express.Router();
 exp.use('/cots', cots);
 const vde = express.Router();
 exp.use('/vende', vde);
+const mdD= express.Router();
+exp.use('/cmbeos',mdD)
+
 //ruteo
+mdD.post('/',async (req,res)=>{
+  const token = req.cookies?.auth_token;
+ 
+  if (!token) {
+       return res.status(401).json({ message: 'No token provided' });
+ }
+try {
+ 
+ const decoded = jwt.verify(token, secretKey); // Verify the token
+   if(decoded.aLev==acsLv){
+    const user = decoded.user; // Access the payload data
+    const reqbody=req.body
+    const lastItem = reqbody.header;
+    console.log(new Date().toLocaleString('en-US'),'LAST ITEM',lastItem);
+    const dataUpdt=reqbody.uptValue;
+    console.log(new Date().toLocaleString('en-US'),'data updt',dataUpdt);
+    //if(lastItem.tUpt=='korUl' || lastItem.tUpt=='kolosUl'|| lastItem.tUpt=='eqBombaUl'){
+    succ=updtBombas(lastItem.rangMod, lastItem.modelo, dataUpdt ,lastItem.tUpt)
+    //}
+    if(succ){
+    res.json({ message: `Se modificaron los datos.`,succ:succ}); // Send data back to the client
+    console.log(new Date().toLocaleString('en-US'),' ',user,`Modifico Tabla: ${lastItem.tUpt} e item: ${lastItem.modelo}`);
+   }else{
+    res.json({ message: `No se pudo modificar los datos.`,succ:succ}); // Send data back to the client
+    console.log(new Date().toLocaleString('en-US'),' ',user,'No pudo modificar datos');
+   }
+  }else{
+    console.error(new Date().toLocaleString('en-US'),' ',user,'No tiene permiso de modificar datos');
+    return res.status(401).json({ message: 'No permitido para usuario' ,succ:succ});
+    
+  }
+} catch (err) {
+ console.error(new Date().toLocaleString('en-US'),"Token Verification Error chg:", err); // VERY important to log the error
+ return res.status(401).json({ message: 'Invalid token' });
+} 
+});
+
+
 exp.get('/bombSol', async (req, res)=>{
-    console.log(req.url);
     try {
         const data = await readjson(bomPath);
         //console.log(data); // despues de leer
         res.send(JSON.stringify(data)); 
       } catch (error) {
-        console.error('Error leyendo el archivo json:', error);
+        console.error(new Date().toLocaleString('en-US'),'Error leyendo el archivo json:', error);
         res.status(500).send('Error al leer los datos');
       }
   
 
 });
 cots.get('/', async (req, res)=>{
-    console.log(req.url);
     try {
         const data = await readjson(cotsPath)
         //console.log(data); // despues de leer
@@ -73,6 +111,7 @@ vde.post('/', async (req, res)=>{
       const vend= data.vendedores.find(vendedor =>{
          return vendedor.mail === usr && vendedor.pw === pw
       });
+      acsLv=vend?.auth ? vend?.auth  : 0;
       let authid = (vend?.vendId ? vend?.vendId  : 0);
       let authLevel = (vend?.auth ? vend?.auth  : 0);
       if (typeof vend === 'undefined'){
@@ -93,7 +132,7 @@ vde.post('/', async (req, res)=>{
        // maxAge: 12 * 60 * 60 * 1000, // 12 hours in milliseconds (alternative to expires)
         path: '/', // Set the cookie path (usually '/' for the whole site)
       });
-      console.log(new Date(),' signed in user: ',vend?.mail);
+      console.log(new Date().toLocaleString('en-US'),'Origin', req.originalUrl,' signed in user: ',vend?.mail);
       const token="valid";
       const auth= {token:token,id:authid,authL:authLevel};
       res.send(JSON.stringify(auth)); 
@@ -118,9 +157,9 @@ vde.get('/amoen', async (req, res)=>{
     
     const user = decoded.user; // Access the payload data
     res.json({ message: `Welcome ${user}! This is protected data.`, userData: decoded }); // Send data back to the client
-    console.log(new Date(),'entered signed in user:',user);
+    console.log(new Date().toLocaleString('en-US'), 'entered', req.originalUrl, ' signed in user:', user);
   } catch (err) {
-    console.error("Token Verification Error:", err); // VERY important to log the error
+    console.error(new Date().toLocaleString('en-US'),"Token Verification Error enemy  :", err); // VERY important to log the error
     return res.status(401).json({ message: 'Invalid token' });
   }
   //res.send(JSON.stringify(randAuth)); 
@@ -155,13 +194,85 @@ rtdisc.get('/:pwd', async (req, res)=>{
  try {
      const data = await jsf.readFile(filePath);
          if(data){ return data;}
-     else{console.log('Error de lectura'); return;}
+     else{console.log(new Date().toLocaleString('en-US'),'Error de lectura'); return;}
  
    } catch (err) {
-     console.error('Error leyendo JSON:', err);
+     console.error(new Date().toLocaleString('en-US'),'Error leyendo JSON:', err);
    }
 }
 
+async function updtBombas(modR, modelP, dataUpdt ,tUpdt) {
+  try {
+    const data = await jsf.readFile(bomPath);
+    if (!data) {
+      console.log(new Date().toLocaleString('en-US'), 'No se encontro el archivo JSON');
+      return false;
+    }
+    let modeltoUpt, modRtoUp, bombas;
+    
+    // Encontrar el dato ancla y la tabla en bomsol 
+    if (tUpdt == 'korUl') {
+      console.log(new Date().toLocaleString('en-US'), 'if korUl');
+      bombas = data.bomSol.bombas;
+      console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 from data:', bombas[0].modelos[0]);
+    }
+    if (tUpdt == 'kolosUl') {
+      console.log(new Date().toLocaleString('en-US'), 'if kolosUl');
+      bombas = data.bomSol.bombasKolosal;
+      console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 from data:', bombas[0].modelos[0]);
+    }
+    if (tUpdt == 'eqBombaUl') {
+      console.log(new Date().toLocaleString('en-US'), 'if eqBombaUl');
+      bombas = data.bomSol.equipamientoBomba.descarga;
+      console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 from data:', bombas[0]);
+    }
+    if (tUpdt == 'eqBombaUl') {
+    modRtoUp = bombas[modR];
+    modeltoUpt = modRtoUp.find(model => model.id == modelP);
+    }else{
+    modRtoUp = bombas.find(bomF => bomF.rangMod == modR);
+    modeltoUpt = modRtoUp.modelos.find(model => model.Modelo == modelP);
+    }
+    if (!modRtoUp) {
+      console.log(new Date().toLocaleString('en-US'), 'No se encontro el conjunto de datos');
+      return false;
+    }
+    if (!modeltoUpt) {
+      console.log(new Date().toLocaleString('en-US'), 'No se encontro el item a modificar');
+      return false;
+
+    } else {
+      console.log(new Date().toLocaleString('en-US'), 'Se modificara:', modeltoUpt);
+      console.log(new Date().toLocaleString('en-US'), 'datos a modificar:', dataUpdt);
+      const entriesArray=Object.entries(dataUpdt);
+      entriesArray.forEach(([key, value]) => {
+        console.log(new Date().toLocaleString('en-US'), `campo dataUpt key: ${key} value:`, value);
+      if (modeltoUpt.hasOwnProperty(key)) {
+        console.log(new Date().toLocaleString('en-US'), 'Se modificara el campo:', modeltoUpt[key],'de ',modeltoUpt[value],' a ',value);
+        modeltoUpt[key] = value;
+      }
+      });
+    }
+    console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 despues de cambios:', bombas[0]);
+    
+    // Write the updated data back to the file
+    
+    await jsf.writeFile(bomPath, data,(err) => {
+      if (err) {
+        console.error(new Date().toLocaleString('en-US'), 'Error writing JSON file:', err);
+      } else {
+        console.log(new Date().toLocaleString('en-US'), 'JSON file has been saved from Upt Bombas.');
+      }
+    });
+    console.log(new Date().toLocaleString('en-US'), 'Archivo JSON actualizado exitosamente');
+    return true;
+    
+  } catch (err) {
+    console.error(new Date().toLocaleString('en-US'), 'Error updating JSON:', err);
+    return false;
+  }
+}
+
 exp.listen(PORT, ()=>{
-    console.log('Servidor escuchando en: ', PORT)
+    console.log(new Date().toLocaleString('en-US'),'Servidor escuchando en: ', PORT)
 });
