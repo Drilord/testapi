@@ -55,18 +55,18 @@ try {
     const dataUpdt=reqbody.uptValue;
     console.log(new Date().toLocaleString('en-US'),'data updt',dataUpdt);
     //if(lastItem.tUpt=='korUl' || lastItem.tUpt=='kolosUl'|| lastItem.tUpt=='eqBombaUl'){
-    succ=updtBombas(lastItem.rangMod, lastItem.modelo, dataUpdt ,lastItem.tUpt)
+    succ=updtjson(lastItem.rangMod, lastItem.modelo, dataUpdt ,lastItem.tUpt)
     //}
-    if(succ){
-    res.json({ message: `Se modificaron los datos.`,succ:succ}); // Send data back to the client
+    if(succ===true){
+    res.json({ message: `Se modificaron los datos.`, succ : succ }); // Send data back to the client
     console.log(new Date().toLocaleString('en-US'),' ',user,`Modifico Tabla: ${lastItem.tUpt} e item: ${lastItem.modelo}`);
    }else{
-    res.json({ message: `No se pudo modificar los datos.`,succ:succ}); // Send data back to the client
+    res.json({ message: `No se pudo modificar los datos.`, succ : succ }); // Send data back to the client
     console.log(new Date().toLocaleString('en-US'),' ',user,'No pudo modificar datos');
    }
   }else{
     console.error(new Date().toLocaleString('en-US'),' ',user,'No tiene permiso de modificar datos');
-    return res.status(401).json({ message: 'No permitido para usuario' ,succ:succ});
+    return res.status(401).json({ message: 'No permitido para usuario' , succ : succ });
     
   }
 } catch (err) {
@@ -201,63 +201,104 @@ rtdisc.get('/:pwd', async (req, res)=>{
    }
 }
 
-async function updtBombas(modR, modelP, dataUpdt ,tUpdt) {
+async function updtjson(modR, modelP, dataUpdt ,tUpdt) {
+  //modR motores, modelP 1, dataUpdt {precio:300},tUPdt motoresM
+  // servicios , Mano de Obra, precio:700 , servicesM
   try {
     const data = await jsf.readFile(bomPath);
     if (!data) {
       console.log(new Date().toLocaleString('en-US'), 'No se encontro el archivo JSON');
       return false;
     }
-    let modeltoUpt, modRtoUp, bombas;
+    let modeltoUpt=null, modRtoUp=null, bombas;
     
     // Encontrar el dato ancla y la tabla en bomsol 
     if (tUpdt == 'korUl') {
       console.log(new Date().toLocaleString('en-US'), 'if korUl');
       bombas = data.bomSol.bombas;
+      modRtoUp = bombas.find(bomF => bomF.rangMod == modR);
+      modeltoUpt = modRtoUp.modelos.find(model => model.Modelo == modelP);
       console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 from data:', bombas[0].modelos[0]);
     }
     if (tUpdt == 'kolosUl') {
       console.log(new Date().toLocaleString('en-US'), 'if kolosUl');
       bombas = data.bomSol.bombasKolosal;
+      modRtoUp = bombas.find(bomF => bomF.rangMod == modR);
+      modeltoUpt = modRtoUp.modelos.find(model => model.Modelo == modelP);
       console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 from data:', bombas[0].modelos[0]);
     }
     if (tUpdt == 'eqBombaUl') {
       console.log(new Date().toLocaleString('en-US'), 'if eqBombaUl');
+      const modelPint = parseInt(modelP);
       bombas = data.bomSol.equipamientoBomba.descarga;
+      modRtoUp = bombas[modR];
+      modeltoUpt = modRtoUp.find(model => model.id == modelPint);
       console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 from data:', bombas[0]);
     }
-    if (tUpdt == 'eqBombaUl') {
-    modRtoUp = bombas[modR];
-    modeltoUpt = modRtoUp.find(model => model.id == modelP);
-    }else{
-    modRtoUp = bombas.find(bomF => bomF.rangMod == modR);
-    modeltoUpt = modRtoUp.modelos.find(model => model.Modelo == modelP);
+    if (tUpdt == 'cableMenu') {
+      const modelPint = parseInt(modelP);
+      bombas = data.bomSol.equipamientoBomba
+      modRtoUp = bombas[modR];
+      modeltoUpt = modRtoUp.find(model => model.calibre == modelPint);
+    }
+    if (tUpdt == 'motoresM') {
+      const modelPint = parseInt(modelP);
+      bombas = data.bomSol
+      modRtoUp = bombas[modR];
+      modeltoUpt = modRtoUp.find(model => model.id == modelPint);
+    }
+    if (tUpdt == 'servicesM') {
+      bombas = data.bomSol
+      modRtoUp = bombas[modR];
+      modeltoUpt = modRtoUp.find(model => model.servicio == modelP);
+    }
+    if (tUpdt == 'gabM') {
+      const modelPint = parseInt(modelP);
+      bombas = data.bomSol.solar
+      modRtoUp = bombas[modR];
+      modeltoUpt = modRtoUp.find(model => model.id == modelPint);
+    }
+    if (tUpdt == 'varM') {
+      const modelPint = parseInt(modelP);
+      bombas = data.bomSol.solar
+      modRtoUp = bombas[modR];
+      modeltoUpt = modRtoUp.find(model => model.id == modelPint);
+    }
+    if (tUpdt == 'panM') {
+      const modelPint = parseInt(modelP);
+      bombas = data.bomSol.solar.paneles
+      modRtoUp = bombas[modR];
+      modeltoUpt = modRtoUp.find(model => model.id == modelPint);
+    }
+    if (tUpdt == 'panelT') {
+      bombas = data.bomSol.solar.paneles;
+      modRtoUp = bombas[modR];
+      modeltoUpt = Array.isArray(modRtoUp) ? modRtoUp.find(model => model.tipoPaneles == modelP) : null;
     }
     if (!modRtoUp) {
       console.log(new Date().toLocaleString('en-US'), 'No se encontro el conjunto de datos');
       return false;
-    }
-    if (!modeltoUpt) {
+    } else if (!modeltoUpt) {
       console.log(new Date().toLocaleString('en-US'), 'No se encontro el item a modificar');
       return false;
 
-    } else {
+    }else {
       console.log(new Date().toLocaleString('en-US'), 'Se modificara:', modeltoUpt);
       console.log(new Date().toLocaleString('en-US'), 'datos a modificar:', dataUpdt);
       const entriesArray=Object.entries(dataUpdt);
       entriesArray.forEach(([key, value]) => {
         console.log(new Date().toLocaleString('en-US'), `campo dataUpt key: ${key} value:`, value);
       if (modeltoUpt.hasOwnProperty(key)) {
-        console.log(new Date().toLocaleString('en-US'), 'Se modificara el campo:', modeltoUpt[key],'de ',modeltoUpt[value],' a ',value);
+        console.log(new Date().toLocaleString('en-US'), 'Se modificara el campo:', key,'de ',modeltoUpt[key],' a ',value);
         modeltoUpt[key] = value;
       }
       });
     }
-    console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 despues de cambios:', bombas[0]);
+    console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 despues de cambios:', modRtoUp[0]);
     
     // Write the updated data back to the file
     
-    await jsf.writeFile(bomPath, data,(err) => {
+    jsf.writeFile(bomPath, data, (err) => {
       if (err) {
         console.error(new Date().toLocaleString('en-US'), 'Error writing JSON file:', err);
       } else {

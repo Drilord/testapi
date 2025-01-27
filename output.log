@@ -1,16 +1,257 @@
-1/23/2025, 9:44:51 AM Servidor escuchando en:  3000
+1/25/2025, 9:54:42 PM Servidor escuchando en:  3000
 Request to /api/vende/amoen
- vend array invalid
+1/25/2025, 9:54:54 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/25/2025, 9:55:05 PM LAST ITEM { rangMod: 'gabinetesArmados', modelo: '1', tUpt: 'gabM' }
+1/25/2025, 9:55:05 PM data updt { Sinfiltro: 4984, filtro150: 10784, filtro500: 15984 }
+1/25/2025, 9:55:05 PM   direccion@weslaco.com.mx Modifico Tabla: gabM e item: 1
+1/25/2025, 9:55:05 PM No se encontro el item a modificar
+1/25/2025, 9:59:39 PM Servidor escuchando en:  3000
 Request to /api/vende/amoen
- vend array invalid
+1/25/2025, 9:59:58 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/25/2025, 10:00:09 PM LAST ITEM { rangMod: 'gabinetesArmados', modelo: '1', tUpt: 'gabM' }
+1/25/2025, 10:00:09 PM data updt { Sinfiltro: 4984, filtro150: 10784, filtro500: 15984 }
+1/25/2025, 10:00:09 PM   direccion@weslaco.com.mx Modifico Tabla: gabM e item: 1
+1/25/2025, 10:00:09 PM Se modificara: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  Sinfiltro: 4983,
+  filtro150: 10783,
+  filtro500: 15983
+}
+1/25/2025, 10:00:09 PM datos a modificar: { Sinfiltro: 4984, filtro150: 10784, filtro500: 15984 }
+1/25/2025, 10:00:09 PM campo dataUpt key: Sinfiltro value: 4984
+1/25/2025, 10:00:09 PM Se modificara el campo: Sinfiltro de  4984  a  4984
+1/25/2025, 10:00:09 PM campo dataUpt key: filtro150 value: 10784
+1/25/2025, 10:00:09 PM Se modificara el campo: filtro150 de  10784  a  10784
+1/25/2025, 10:00:09 PM campo dataUpt key: filtro500 value: 15984
+1/25/2025, 10:00:09 PM Se modificara el campo: filtro500 de  15984  a  15984
+1/25/2025, 10:00:09 PM Bombas 0 modelo 0 despues de cambios: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  Sinfiltro: 4984,
+  filtro150: 10784,
+  filtro500: 15984
+}
+1/25/2025, 10:00:09 PM Archivo JSON actualizado exitosamente
+1/25/2025, 10:00:09 PM JSON file has been saved from Upt Bombas.
+1/25/2025, 10:00:40 PM LAST ITEM { rangMod: 'gabinetesArmados', modelo: '1', tUpt: 'gabM' }
+1/25/2025, 10:00:40 PM data updt { Sinfiltro: 4983, filtro150: 10783, filtro500: 15983 }
+1/25/2025, 10:00:40 PM   direccion@weslaco.com.mx Modifico Tabla: gabM e item: 1
+1/25/2025, 10:00:40 PM Se modificara: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  Sinfiltro: 4984,
+  filtro150: 10784,
+  filtro500: 15984
+}
+1/25/2025, 10:00:40 PM datos a modificar: { Sinfiltro: 4983, filtro150: 10783, filtro500: 15983 }
+1/25/2025, 10:00:40 PM campo dataUpt key: Sinfiltro value: 4983
+1/25/2025, 10:00:40 PM Se modificara el campo: Sinfiltro de  4983  a  4983
+1/25/2025, 10:00:40 PM campo dataUpt key: filtro150 value: 10783
+1/25/2025, 10:00:40 PM Se modificara el campo: filtro150 de  10783  a  10783
+1/25/2025, 10:00:40 PM campo dataUpt key: filtro500 value: 15983
+1/25/2025, 10:00:40 PM Se modificara el campo: filtro500 de  15983  a  15983
+1/25/2025, 10:00:40 PM Bombas 0 modelo 0 despues de cambios: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  Sinfiltro: 4983,
+  filtro150: 10783,
+  filtro500: 15983
+}
+1/25/2025, 10:00:40 PM Archivo JSON actualizado exitosamente
+1/25/2025, 10:00:40 PM JSON file has been saved from Upt Bombas.
+1/25/2025, 10:01:06 PM LAST ITEM { rangMod: 'variadorSolar', modelo: '1', tUpt: 'varM' }
+1/25/2025, 10:01:06 PM data updt { precio: 7841 }
+1/25/2025, 10:01:06 PM   direccion@weslaco.com.mx Modifico Tabla: varM e item: 1
+1/25/2025, 10:01:06 PM Se modificara: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  descripcion: '3 HP trifasico 220',
+  amp: 10,
+  precio: 7840
+}
+1/25/2025, 10:01:06 PM datos a modificar: { precio: 7841 }
+1/25/2025, 10:01:06 PM campo dataUpt key: precio value: 7841
+1/25/2025, 10:01:06 PM Se modificara el campo: precio de  7841  a  7841
+1/25/2025, 10:01:06 PM Bombas 0 modelo 0 despues de cambios: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  descripcion: '3 HP trifasico 220',
+  amp: 10,
+  precio: 7841
+}
+1/25/2025, 10:01:06 PM Archivo JSON actualizado exitosamente
+1/25/2025, 10:01:06 PM JSON file has been saved from Upt Bombas.
+1/25/2025, 10:01:30 PM LAST ITEM { rangMod: 'variadorSolar', modelo: '1', tUpt: 'varM' }
+1/25/2025, 10:01:30 PM data updt { precio: 7840 }
+1/25/2025, 10:01:30 PM   direccion@weslaco.com.mx Modifico Tabla: varM e item: 1
+1/25/2025, 10:01:30 PM Se modificara: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  descripcion: '3 HP trifasico 220',
+  amp: 10,
+  precio: 7841
+}
+1/25/2025, 10:01:30 PM datos a modificar: { precio: 7840 }
+1/25/2025, 10:01:30 PM campo dataUpt key: precio value: 7840
+1/25/2025, 10:01:30 PM Se modificara el campo: precio de  7840  a  7840
+1/25/2025, 10:01:30 PM Bombas 0 modelo 0 despues de cambios: {
+  id: 1,
+  hp: 2,
+  voltaje: 220,
+  descripcion: '3 HP trifasico 220',
+  amp: 10,
+  precio: 7840
+}
+1/25/2025, 10:01:30 PM Archivo JSON actualizado exitosamente
+1/25/2025, 10:01:30 PM JSON file has been saved from Upt Bombas.
+1/25/2025, 10:02:01 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/25/2025, 10:02:01 PM data updt { precio: 100.1 }
+1/25/2025, 10:02:01 PM   direccion@weslaco.com.mx Modifico Tabla: panelT e item: Canadian
+1/25/2025, 10:03:15 PM Servidor escuchando en:  3000
 Request to /api/vende/amoen
- vend array invalid
+1/25/2025, 10:03:24 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/25/2025, 10:03:38 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/25/2025, 10:03:38 PM data updt { precio: 101.1 }
+1/25/2025, 10:03:38 PM   direccion@weslaco.com.mx Modifico Tabla: panelT e item: Canadian
 Request to /api/vende/amoen
- vend array invalid
+1/26/2025, 10:58:42 AM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/26/2025, 10:58:59 AM LAST ITEM { rangMod: 'cantidadxHP', modelo: '1', tUpt: 'panM' }
+1/26/2025, 10:58:59 AM data updt { cantidadPaneles: 9 }
+1/26/2025, 10:58:59 AM   direccion@weslaco.com.mx Modifico Tabla: panM e item: 1
+1/26/2025, 10:58:59 AM Se modificara: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [ 1, 8 ] }
+1/26/2025, 10:58:59 AM datos a modificar: { cantidadPaneles: 9 }
+1/26/2025, 10:58:59 AM campo dataUpt key: cantidadPaneles value: 9
+1/26/2025, 10:58:59 AM Se modificara el campo: cantidadPaneles de  9  a  9
+1/26/2025, 10:58:59 AM Bombas 0 modelo 0 despues de cambios: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 9, string: [ 1, 8 ] }
+1/26/2025, 10:58:59 AM Archivo JSON actualizado exitosamente
+1/26/2025, 10:58:59 AM JSON file has been saved from Upt Bombas.
+1/26/2025, 11:03:08 AM Servidor escuchando en:  3000
 Request to /api/vende/amoen
+1/26/2025, 11:03:17 AM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/26/2025, 11:03:28 AM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/26/2025, 11:03:28 AM data updt { precio: 100.1 }
+1/26/2025, 11:03:28 AM   direccion@weslaco.com.mx Modifico Tabla: panelT e item: Canadian
+1/26/2025, 11:03:28 AM No se encontro el conjunto de datos
 Request to /api/vende/amoen
- vend array invalid
-1/23/2025, 9:53:02 AM Origin /vende  signed in user:  direccion@weslaco.com.mx
-1/24/2025, 12:41:43 PM Servidor escuchando en:  3000
+1/27/2025, 9:17:34 AM Origin /vende  signed in user:  direccion@weslaco.com.mx
 Request to /api/vende/amoen
+1/27/2025, 9:24:15 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
 Request to /api/vende/amoen
+1/27/2025, 9:43:59 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 9:45:37 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 9:49:29 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 10:52:50 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 10:53:05 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 10:54:34 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 10:57:52 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 11:51:07 AM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 12:05:38 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 12:08:35 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 12:32:38 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 12:34:00 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 12:35:20 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 12:36:58 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 12:37:47 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:00:12 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:00:14 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:01:27 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:12:26 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:12:32 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:13:45 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:19:02 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:20:01 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:29:05 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:30:32 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:31:06 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:34:02 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:37:15 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:41:58 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:42:19 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:42:34 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:43:09 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:43:14 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:50:04 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 1:50:18 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 2:04:24 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 2:06:19 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 2:07:51 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 2:10:49 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 3:53:40 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 4:00:12 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 4:01:12 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+1/27/2025, 4:01:24 PM LAST ITEM { rangMod: 'cantidadxHP', modelo: '1', tUpt: 'panM' }
+1/27/2025, 4:01:24 PM data updt { cantidadPaneles: 8 }
+1/27/2025, 4:01:24 PM   direccion@weslaco.com.mx Modifico Tabla: panM e item: 1
+1/27/2025, 4:01:24 PM Se modificara: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 9, string: [ 1, 8 ] }
+1/27/2025, 4:01:24 PM datos a modificar: { cantidadPaneles: 8 }
+1/27/2025, 4:01:24 PM campo dataUpt key: cantidadPaneles value: 8
+Request to /api/vende/amoen
+1/27/2025, 4:02:07 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+1/27/2025, 4:02:18 PM LAST ITEM { rangMod: 'cantidadxHP', modelo: '1', tUpt: 'panM' }
+1/27/2025, 4:02:18 PM data updt { cantidadPaneles: 8 }
+1/27/2025, 4:02:18 PM   direccion@weslaco.com.mx Modifico Tabla: panM e item: 1
+1/27/2025, 4:02:18 PM Se modificara: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 9, string: [ 1, 8 ] }
+1/27/2025, 4:02:18 PM datos a modificar: { cantidadPaneles: 8 }
+1/27/2025, 4:02:18 PM campo dataUpt key: cantidadPaneles value: 8
+1/27/2025, 4:11:06 PM Servidor escuchando en:  3000
+Request to /api/vende/amoen
+1/27/2025, 4:11:22 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/27/2025, 4:11:38 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/27/2025, 4:11:38 PM data updt { precio: 101.1 }
+1/27/2025, 4:11:38 PM   direccion@weslaco.com.mx Modifico Tabla: panelT e item: Canadian
+1/27/2025, 4:11:38 PM No se encontro el conjunto de datos
+Request to /api/vende/amoen
+1/27/2025, 4:15:01 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+1/27/2025, 4:15:12 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/27/2025, 4:15:12 PM data updt { precio: 991.9 }
+1/27/2025, 4:15:12 PM   direccion@weslaco.com.mx Modifico Tabla: panelT e item: Canadian
+1/27/2025, 4:15:12 PM No se encontro el conjunto de datos
