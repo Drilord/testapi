@@ -255,3 +255,1669 @@ Request to /api/vende/amoen
 1/27/2025, 4:15:12 PM data updt { precio: 991.9 }
 1/27/2025, 4:15:12 PM   direccion@weslaco.com.mx Modifico Tabla: panelT e item: Canadian
 1/27/2025, 4:15:12 PM No se encontro el conjunto de datos
+Request to /api/vende/amoen
+1/27/2025, 4:34:16 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 4:37:28 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+1/27/2025, 4:43:49 PM Servidor escuchando en:  3000
+Request to /api/vende/amoen
+Request to /api/vende/amoen
+1/27/2025, 4:47:06 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 4:48:20 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+1/27/2025, 4:48:30 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+1/27/2025, 4:48:40 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/27/2025, 4:48:40 PM data updt { precio: 34545 }
+1/27/2025, 4:48:40 PM   direccion@weslaco.com.mx No pudo modificar datos
+1/27/2025, 4:48:40 PM No se encontro el conjunto de datos
+1/27/2025, 5:16:54 PM LAST ITEM { rangMod: 'cantidadxHP', modelo: '1', tUpt: 'panM' }
+1/27/2025, 5:16:54 PM data updt { cantidadPaneles: 8 }
+1/27/2025, 5:16:54 PM   direccion@weslaco.com.mx No pudo modificar datos
+1/27/2025, 5:16:54 PM Se modificara: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 9, string: [ 1, 8 ] }
+1/27/2025, 5:16:54 PM datos a modificar: { cantidadPaneles: 8 }
+1/27/2025, 5:16:54 PM campo dataUpt key: cantidadPaneles value: 8
+1/27/2025, 5:16:54 PM Se modificara el campo: cantidadPaneles de  9  a  8
+1/27/2025, 5:16:54 PM Bombas 0 modelo 0 despues de cambios: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [ 1, 8 ] }
+1/27/2025, 5:16:54 PM Archivo JSON actualizado exitosamente
+1/27/2025, 5:16:54 PM JSON file has been saved from Upt Bombas.
+1/27/2025, 5:32:27 PM Servidor escuchando en:  3000
+Request to /api/vende/amoen
+1/27/2025, 5:34:36 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/27/2025, 5:35:28 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/27/2025, 5:35:28 PM data updt { precio: 101.1 }
+1/27/2025, 5:35:28 PM   direccion@weslaco.com.mx No pudo modificar datos
+1/27/2025, 5:35:28 PM No se encontro el conjunto de datos
+1/27/2025, 9:32:49 PM Servidor escuchando en:  3000
+Request to /api/vende/amoen
+1/27/2025, 9:33:06 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/27/2025, 9:33:25 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/27/2025, 9:33:25 PM data updt { precio: 100.1 }
+1/27/2025, 9:33:25 PM   direccion@weslaco.com.mx No pudo modificar datos
+1/27/2025, 9:33:25 PM tUpdt: panelT
+1/27/2025, 9:33:25 PM bombas: {
+  gabinetesArmados: [
+    {
+      id: 1,
+      hp: 2,
+      voltaje: 220,
+      Sinfiltro: 4983,
+      filtro150: 10783,
+      filtro500: 15983
+    },
+    {
+      id: 2,
+      hp: 3,
+      voltaje: 220,
+      Sinfiltro: 4574,
+      filtro150: 10374,
+      filtro500: 15574
+    },
+    {
+      id: 3,
+      hp: 5,
+      voltaje: 220,
+      Sinfiltro: 3174,
+      filtro150: 8974,
+      filtro500: 14174
+    },
+    {
+      id: 4,
+      hp: 7.5,
+      voltaje: 220,
+      Sinfiltro: 3529,
+      filtro150: 9329,
+      filtro500: 14529
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 440,
+      Sinfiltro: 4233,
+      filtro150: 10033,
+      filtro500: 15233
+    },
+    {
+      id: 6,
+      hp: 10,
+      voltaje: 440,
+      Sinfiltro: 4074,
+      filtro150: 9874,
+      filtro500: 19374
+    },
+    {
+      id: 7,
+      hp: 15,
+      voltaje: 440,
+      Sinfiltro: 7524,
+      filtro150: 13824,
+      filtro500: 19024
+    },
+    {
+      id: 8,
+      hp: 20,
+      voltaje: 440,
+      Sinfiltro: 5345,
+      filtro150: 16845,
+      filtro500: 26345
+    },
+    {
+      id: 9,
+      hp: 25,
+      voltaje: 440,
+      Sinfiltro: 8086,
+      filtro150: 21486,
+      filtro500: 29586
+    },
+    {
+      id: 10,
+      hp: 30,
+      voltaje: 440,
+      Sinfiltro: 8987,
+      filtro150: 20987,
+      filtro500: 30487
+    },
+    {
+      id: 11,
+      hp: 40,
+      voltaje: 440,
+      Sinfiltro: 12978,
+      filtro150: 25328,
+      filtro500: 45828
+    },
+    {
+      id: 12,
+      hp: 50,
+      voltaje: 440,
+      Sinfiltro: 25120,
+      filtro150: 37470,
+      filtro500: 57970
+    },
+    {
+      id: 13,
+      hp: 60,
+      voltaje: 440,
+      Sinfiltro: 16762,
+      filtro150: 49612,
+      filtro500: ''
+    },
+    {
+      id: 14,
+      hp: 75,
+      voltaje: 440,
+      Sinfiltro: 24604,
+      filtro150: 65454,
+      filtro500: ''
+    },
+    {
+      id: 15,
+      hp: 100,
+      voltaje: 440,
+      Sinfiltro: 27688,
+      filtro150: 79638,
+      filtro500: ''
+    },
+    {
+      id: 16,
+      hp: 150,
+      voltaje: 440,
+      Sinfiltro: 61595,
+      filtro150: '',
+      filtro500: ''
+    },
+    {
+      id: 17,
+      hp: 250,
+      voltaje: 440,
+      Sinfiltro: 103828,
+      filtro150: '',
+      filtro500: ''
+    }
+  ],
+  variadorSolar: [
+    {
+      id: 1,
+      hp: 2,
+      voltaje: 220,
+      descripcion: '3 HP trifasico 220',
+      amp: 10,
+      precio: 7840
+    },
+    {
+      id: 2,
+      hp: 3,
+      voltaje: 220,
+      descripcion: '5 HP trifasico 220',
+      amp: 16,
+      precio: 12800
+    },
+    {
+      id: 3,
+      hp: 5,
+      voltaje: 220,
+      descripcion: '7.5 HP trifasico 220',
+      amp: 20,
+      precio: 17500
+    },
+    {
+      id: 4,
+      hp: 7.5,
+      voltaje: 220,
+      descripcion: '10 HP trifasico 220',
+      amp: 30,
+      precio: 23345
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 440,
+      descripcion: '10 HP trifasico 440',
+      amp: 18.5,
+      precio: 15950
+    },
+    {
+      id: 6,
+      hp: 10,
+      voltaje: 440,
+      descripcion: '15 HP trifasico 440',
+      amp: 25,
+      precio: 19800
+    },
+    {
+      id: 7,
+      hp: 15,
+      voltaje: 440,
+      descripcion: '20 HP trifasico 440',
+      amp: 32,
+      precio: 23600
+    },
+    {
+      id: 8,
+      hp: 20,
+      voltaje: 440,
+      descripcion: '25 HP trifasico 440',
+      amp: 38,
+      precio: 31800
+    },
+    {
+      id: 9,
+      hp: 25,
+      voltaje: 440,
+      descripcion: '30 HP trifasico 440',
+      amp: 45,
+      precio: 36280
+    },
+    {
+      id: 10,
+      hp: 30,
+      voltaje: 440,
+      descripcion: '40 HP trifasico 440',
+      amp: 60,
+      precio: 45800
+    },
+    {
+      id: 11,
+      hp: 40,
+      voltaje: 440,
+      descripcion: '50 HP trifasico 440',
+      amp: 75,
+      precio: 52600
+    },
+    {
+      id: 12,
+      hp: 50,
+      voltaje: 440,
+      descripcion: '60 HP trifasico 440',
+      amp: 92,
+      precio: 63800
+    },
+    {
+      id: 13,
+      hp: 60,
+      voltaje: 440,
+      descripcion: '75 HP trifasico 440',
+      amp: 115,
+      precio: 80800
+    },
+    {
+      id: 14,
+      hp: 75,
+      voltaje: 440,
+      descripcion: '100 HP trifasico 440',
+      amp: 150,
+      precio: 84500
+    },
+    {
+      id: 15,
+      hp: 100,
+      voltaje: 440,
+      descripcion: '125 HP trifasico 440',
+      amp: 180,
+      precio: 94500
+    },
+    {
+      id: 16,
+      hp: 150,
+      voltaje: 440,
+      descripcion: '150 HP trifasico 440',
+      amp: 215,
+      precio: 108800
+    },
+    {
+      id: 17,
+      hp: 250,
+      voltaje: 440,
+      descripcion: '295HP trifasico',
+      amp: 300,
+      precio: 205000
+    }
+  ],
+  paneles: {
+    tipoPaneles: 'Canadian',
+    potencia: 555,
+    precio: 99.9,
+    cantidadxHP: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ]
+  }
+}
+1/27/2025, 9:33:25 PM modR: paneles
+1/27/2025, 9:33:25 PM bombas.modR: {
+  tipoPaneles: 'Canadian',
+  potencia: 555,
+  precio: 99.9,
+  cantidadxHP: [
+    { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 2, hp: 2, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 3, hp: 3, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    {
+      id: 4,
+      hp: 5,
+      voltaje: 220,
+      cantidadPaneles: 14,
+      string: [Array]
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 220,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 6,
+      hp: 7.5,
+      voltaje: 440,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 7,
+      hp: 10,
+      voltaje: 440,
+      cantidadPaneles: 28,
+      string: [Array]
+    },
+    {
+      id: 8,
+      hp: 15,
+      voltaje: 440,
+      cantidadPaneles: 32,
+      string: [Array]
+    },
+    {
+      id: 9,
+      hp: 20,
+      voltaje: 440,
+      cantidadPaneles: 42,
+      string: [Array]
+    },
+    {
+      id: 10,
+      hp: 25,
+      voltaje: 440,
+      cantidadPaneles: 56,
+      string: [Array]
+    },
+    {
+      id: 11,
+      hp: 30,
+      voltaje: 440,
+      cantidadPaneles: 70,
+      string: [Array]
+    },
+    {
+      id: 12,
+      hp: 40,
+      voltaje: 440,
+      cantidadPaneles: 84,
+      string: [Array]
+    },
+    {
+      id: 13,
+      hp: 50,
+      voltaje: 440,
+      cantidadPaneles: 112,
+      string: [Array]
+    },
+    {
+      id: 14,
+      hp: 60,
+      voltaje: 440,
+      cantidadPaneles: 140,
+      string: [Array]
+    },
+    {
+      id: 15,
+      hp: 75,
+      voltaje: 440,
+      cantidadPaneles: 168,
+      string: [Array]
+    },
+    {
+      id: 16,
+      hp: 100,
+      voltaje: 440,
+      cantidadPaneles: 224,
+      string: [Array]
+    },
+    {
+      id: 17,
+      hp: 125,
+      voltaje: 440,
+      cantidadPaneles: 280,
+      string: [Array]
+    },
+    {
+      id: 18,
+      hp: 150,
+      voltaje: 440,
+      cantidadPaneles: 322,
+      string: [Array]
+    },
+    {
+      id: 19,
+      hp: 175,
+      voltaje: 440,
+      cantidadPaneles: 378,
+      string: [Array]
+    },
+    {
+      id: 20,
+      hp: 200,
+      voltaje: 440,
+      cantidadPaneles: 434,
+      string: [Array]
+    },
+    {
+      id: 21,
+      hp: 250,
+      voltaje: 440,
+      cantidadPaneles: 546,
+      string: [Array]
+    }
+  ]
+}
+1/27/2025, 9:33:25 PM Se modificara: [
+  {
+    tipoPaneles: 'Canadian',
+    potencia: 555,
+    precio: 99.9,
+    cantidadxHP: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ]
+  }
+]
+1/27/2025, 9:33:25 PM datos a modificar: { precio: 100.1 }
+1/27/2025, 9:33:25 PM campo dataUpt key: precio value: 100.1
+1/27/2025, 9:33:25 PM Bombas 0 modelo 0 despues de cambios: undefined
+1/27/2025, 9:33:25 PM JSON file has been saved from Upt Bombas.
+1/27/2025, 9:33:25 PM Archivo JSON actualizado exitosamente
+1/27/2025, 9:38:41 PM Servidor escuchando en:  3000
+Request to /api/vende/amoen
+1/27/2025, 9:39:04 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/27/2025, 9:39:18 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/27/2025, 9:39:18 PM data updt { precio: 99.1 }
+1/27/2025, 9:39:18 PM   direccion@weslaco.com.mx No pudo modificar datos
+1/27/2025, 9:39:18 PM tUpdt: panelT
+1/27/2025, 9:39:18 PM bombas: {
+  gabinetesArmados: [
+    {
+      id: 1,
+      hp: 2,
+      voltaje: 220,
+      Sinfiltro: 4983,
+      filtro150: 10783,
+      filtro500: 15983
+    },
+    {
+      id: 2,
+      hp: 3,
+      voltaje: 220,
+      Sinfiltro: 4574,
+      filtro150: 10374,
+      filtro500: 15574
+    },
+    {
+      id: 3,
+      hp: 5,
+      voltaje: 220,
+      Sinfiltro: 3174,
+      filtro150: 8974,
+      filtro500: 14174
+    },
+    {
+      id: 4,
+      hp: 7.5,
+      voltaje: 220,
+      Sinfiltro: 3529,
+      filtro150: 9329,
+      filtro500: 14529
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 440,
+      Sinfiltro: 4233,
+      filtro150: 10033,
+      filtro500: 15233
+    },
+    {
+      id: 6,
+      hp: 10,
+      voltaje: 440,
+      Sinfiltro: 4074,
+      filtro150: 9874,
+      filtro500: 19374
+    },
+    {
+      id: 7,
+      hp: 15,
+      voltaje: 440,
+      Sinfiltro: 7524,
+      filtro150: 13824,
+      filtro500: 19024
+    },
+    {
+      id: 8,
+      hp: 20,
+      voltaje: 440,
+      Sinfiltro: 5345,
+      filtro150: 16845,
+      filtro500: 26345
+    },
+    {
+      id: 9,
+      hp: 25,
+      voltaje: 440,
+      Sinfiltro: 8086,
+      filtro150: 21486,
+      filtro500: 29586
+    },
+    {
+      id: 10,
+      hp: 30,
+      voltaje: 440,
+      Sinfiltro: 8987,
+      filtro150: 20987,
+      filtro500: 30487
+    },
+    {
+      id: 11,
+      hp: 40,
+      voltaje: 440,
+      Sinfiltro: 12978,
+      filtro150: 25328,
+      filtro500: 45828
+    },
+    {
+      id: 12,
+      hp: 50,
+      voltaje: 440,
+      Sinfiltro: 25120,
+      filtro150: 37470,
+      filtro500: 57970
+    },
+    {
+      id: 13,
+      hp: 60,
+      voltaje: 440,
+      Sinfiltro: 16762,
+      filtro150: 49612,
+      filtro500: ''
+    },
+    {
+      id: 14,
+      hp: 75,
+      voltaje: 440,
+      Sinfiltro: 24604,
+      filtro150: 65454,
+      filtro500: ''
+    },
+    {
+      id: 15,
+      hp: 100,
+      voltaje: 440,
+      Sinfiltro: 27688,
+      filtro150: 79638,
+      filtro500: ''
+    },
+    {
+      id: 16,
+      hp: 150,
+      voltaje: 440,
+      Sinfiltro: 61595,
+      filtro150: '',
+      filtro500: ''
+    },
+    {
+      id: 17,
+      hp: 250,
+      voltaje: 440,
+      Sinfiltro: 103828,
+      filtro150: '',
+      filtro500: ''
+    }
+  ],
+  variadorSolar: [
+    {
+      id: 1,
+      hp: 2,
+      voltaje: 220,
+      descripcion: '3 HP trifasico 220',
+      amp: 10,
+      precio: 7840
+    },
+    {
+      id: 2,
+      hp: 3,
+      voltaje: 220,
+      descripcion: '5 HP trifasico 220',
+      amp: 16,
+      precio: 12800
+    },
+    {
+      id: 3,
+      hp: 5,
+      voltaje: 220,
+      descripcion: '7.5 HP trifasico 220',
+      amp: 20,
+      precio: 17500
+    },
+    {
+      id: 4,
+      hp: 7.5,
+      voltaje: 220,
+      descripcion: '10 HP trifasico 220',
+      amp: 30,
+      precio: 23345
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 440,
+      descripcion: '10 HP trifasico 440',
+      amp: 18.5,
+      precio: 15950
+    },
+    {
+      id: 6,
+      hp: 10,
+      voltaje: 440,
+      descripcion: '15 HP trifasico 440',
+      amp: 25,
+      precio: 19800
+    },
+    {
+      id: 7,
+      hp: 15,
+      voltaje: 440,
+      descripcion: '20 HP trifasico 440',
+      amp: 32,
+      precio: 23600
+    },
+    {
+      id: 8,
+      hp: 20,
+      voltaje: 440,
+      descripcion: '25 HP trifasico 440',
+      amp: 38,
+      precio: 31800
+    },
+    {
+      id: 9,
+      hp: 25,
+      voltaje: 440,
+      descripcion: '30 HP trifasico 440',
+      amp: 45,
+      precio: 36280
+    },
+    {
+      id: 10,
+      hp: 30,
+      voltaje: 440,
+      descripcion: '40 HP trifasico 440',
+      amp: 60,
+      precio: 45800
+    },
+    {
+      id: 11,
+      hp: 40,
+      voltaje: 440,
+      descripcion: '50 HP trifasico 440',
+      amp: 75,
+      precio: 52600
+    },
+    {
+      id: 12,
+      hp: 50,
+      voltaje: 440,
+      descripcion: '60 HP trifasico 440',
+      amp: 92,
+      precio: 63800
+    },
+    {
+      id: 13,
+      hp: 60,
+      voltaje: 440,
+      descripcion: '75 HP trifasico 440',
+      amp: 115,
+      precio: 80800
+    },
+    {
+      id: 14,
+      hp: 75,
+      voltaje: 440,
+      descripcion: '100 HP trifasico 440',
+      amp: 150,
+      precio: 84500
+    },
+    {
+      id: 15,
+      hp: 100,
+      voltaje: 440,
+      descripcion: '125 HP trifasico 440',
+      amp: 180,
+      precio: 94500
+    },
+    {
+      id: 16,
+      hp: 150,
+      voltaje: 440,
+      descripcion: '150 HP trifasico 440',
+      amp: 215,
+      precio: 108800
+    },
+    {
+      id: 17,
+      hp: 250,
+      voltaje: 440,
+      descripcion: '295HP trifasico',
+      amp: 300,
+      precio: 205000
+    }
+  ],
+  paneles: {
+    tipoPaneles: 'Canadian',
+    potencia: 555,
+    precio: 99.9,
+    cantidadxHP: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ]
+  }
+}
+1/27/2025, 9:39:18 PM modR: paneles
+1/27/2025, 9:39:18 PM bombas.modR: {
+  tipoPaneles: 'Canadian',
+  potencia: 555,
+  precio: 99.9,
+  cantidadxHP: [
+    { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 2, hp: 2, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 3, hp: 3, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    {
+      id: 4,
+      hp: 5,
+      voltaje: 220,
+      cantidadPaneles: 14,
+      string: [Array]
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 220,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 6,
+      hp: 7.5,
+      voltaje: 440,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 7,
+      hp: 10,
+      voltaje: 440,
+      cantidadPaneles: 28,
+      string: [Array]
+    },
+    {
+      id: 8,
+      hp: 15,
+      voltaje: 440,
+      cantidadPaneles: 32,
+      string: [Array]
+    },
+    {
+      id: 9,
+      hp: 20,
+      voltaje: 440,
+      cantidadPaneles: 42,
+      string: [Array]
+    },
+    {
+      id: 10,
+      hp: 25,
+      voltaje: 440,
+      cantidadPaneles: 56,
+      string: [Array]
+    },
+    {
+      id: 11,
+      hp: 30,
+      voltaje: 440,
+      cantidadPaneles: 70,
+      string: [Array]
+    },
+    {
+      id: 12,
+      hp: 40,
+      voltaje: 440,
+      cantidadPaneles: 84,
+      string: [Array]
+    },
+    {
+      id: 13,
+      hp: 50,
+      voltaje: 440,
+      cantidadPaneles: 112,
+      string: [Array]
+    },
+    {
+      id: 14,
+      hp: 60,
+      voltaje: 440,
+      cantidadPaneles: 140,
+      string: [Array]
+    },
+    {
+      id: 15,
+      hp: 75,
+      voltaje: 440,
+      cantidadPaneles: 168,
+      string: [Array]
+    },
+    {
+      id: 16,
+      hp: 100,
+      voltaje: 440,
+      cantidadPaneles: 224,
+      string: [Array]
+    },
+    {
+      id: 17,
+      hp: 125,
+      voltaje: 440,
+      cantidadPaneles: 280,
+      string: [Array]
+    },
+    {
+      id: 18,
+      hp: 150,
+      voltaje: 440,
+      cantidadPaneles: 322,
+      string: [Array]
+    },
+    {
+      id: 19,
+      hp: 175,
+      voltaje: 440,
+      cantidadPaneles: 378,
+      string: [Array]
+    },
+    {
+      id: 20,
+      hp: 200,
+      voltaje: 440,
+      cantidadPaneles: 434,
+      string: [Array]
+    },
+    {
+      id: 21,
+      hp: 250,
+      voltaje: 440,
+      cantidadPaneles: 546,
+      string: [Array]
+    }
+  ]
+}
+1/27/2025, 9:39:18 PM Se modificara: {
+  tipoPaneles: 'Canadian',
+  potencia: 555,
+  precio: 99.9,
+  cantidadxHP: [
+    { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 2, hp: 2, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 3, hp: 3, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    {
+      id: 4,
+      hp: 5,
+      voltaje: 220,
+      cantidadPaneles: 14,
+      string: [Array]
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 220,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 6,
+      hp: 7.5,
+      voltaje: 440,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 7,
+      hp: 10,
+      voltaje: 440,
+      cantidadPaneles: 28,
+      string: [Array]
+    },
+    {
+      id: 8,
+      hp: 15,
+      voltaje: 440,
+      cantidadPaneles: 32,
+      string: [Array]
+    },
+    {
+      id: 9,
+      hp: 20,
+      voltaje: 440,
+      cantidadPaneles: 42,
+      string: [Array]
+    },
+    {
+      id: 10,
+      hp: 25,
+      voltaje: 440,
+      cantidadPaneles: 56,
+      string: [Array]
+    },
+    {
+      id: 11,
+      hp: 30,
+      voltaje: 440,
+      cantidadPaneles: 70,
+      string: [Array]
+    },
+    {
+      id: 12,
+      hp: 40,
+      voltaje: 440,
+      cantidadPaneles: 84,
+      string: [Array]
+    },
+    {
+      id: 13,
+      hp: 50,
+      voltaje: 440,
+      cantidadPaneles: 112,
+      string: [Array]
+    },
+    {
+      id: 14,
+      hp: 60,
+      voltaje: 440,
+      cantidadPaneles: 140,
+      string: [Array]
+    },
+    {
+      id: 15,
+      hp: 75,
+      voltaje: 440,
+      cantidadPaneles: 168,
+      string: [Array]
+    },
+    {
+      id: 16,
+      hp: 100,
+      voltaje: 440,
+      cantidadPaneles: 224,
+      string: [Array]
+    },
+    {
+      id: 17,
+      hp: 125,
+      voltaje: 440,
+      cantidadPaneles: 280,
+      string: [Array]
+    },
+    {
+      id: 18,
+      hp: 150,
+      voltaje: 440,
+      cantidadPaneles: 322,
+      string: [Array]
+    },
+    {
+      id: 19,
+      hp: 175,
+      voltaje: 440,
+      cantidadPaneles: 378,
+      string: [Array]
+    },
+    {
+      id: 20,
+      hp: 200,
+      voltaje: 440,
+      cantidadPaneles: 434,
+      string: [Array]
+    },
+    {
+      id: 21,
+      hp: 250,
+      voltaje: 440,
+      cantidadPaneles: 546,
+      string: [Array]
+    }
+  ]
+}
+1/27/2025, 9:39:18 PM datos a modificar: { precio: 99.1 }
+1/27/2025, 9:39:18 PM campo dataUpt key: precio value: 99.1
+1/27/2025, 9:39:18 PM Se modificara el campo: precio de  99.9  a  99.1
+1/27/2025, 9:39:18 PM Bombas 0 modelo 0 despues de cambios: undefined
+1/27/2025, 9:39:18 PM JSON file has been saved from Upt Bombas.
+1/27/2025, 9:39:18 PM Archivo JSON actualizado exitosamente
+1/27/2025, 9:54:46 PM Servidor escuchando en:  3000
+Request to /api/vende/amoen
+1/27/2025, 9:54:57 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+1/27/2025, 9:58:38 PM LAST ITEM { rangMod: 'paneles', modelo: 'Canadian', tUpt: 'panelT' }
+1/27/2025, 9:58:38 PM data updt { precio: 99.9 }
+1/27/2025, 9:58:38 PM tUpdt: panelT
+1/27/2025, 9:58:38 PM bombas: {
+  gabinetesArmados: [
+    {
+      id: 1,
+      hp: 2,
+      voltaje: 220,
+      Sinfiltro: 4983,
+      filtro150: 10783,
+      filtro500: 15983
+    },
+    {
+      id: 2,
+      hp: 3,
+      voltaje: 220,
+      Sinfiltro: 4574,
+      filtro150: 10374,
+      filtro500: 15574
+    },
+    {
+      id: 3,
+      hp: 5,
+      voltaje: 220,
+      Sinfiltro: 3174,
+      filtro150: 8974,
+      filtro500: 14174
+    },
+    {
+      id: 4,
+      hp: 7.5,
+      voltaje: 220,
+      Sinfiltro: 3529,
+      filtro150: 9329,
+      filtro500: 14529
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 440,
+      Sinfiltro: 4233,
+      filtro150: 10033,
+      filtro500: 15233
+    },
+    {
+      id: 6,
+      hp: 10,
+      voltaje: 440,
+      Sinfiltro: 4074,
+      filtro150: 9874,
+      filtro500: 19374
+    },
+    {
+      id: 7,
+      hp: 15,
+      voltaje: 440,
+      Sinfiltro: 7524,
+      filtro150: 13824,
+      filtro500: 19024
+    },
+    {
+      id: 8,
+      hp: 20,
+      voltaje: 440,
+      Sinfiltro: 5345,
+      filtro150: 16845,
+      filtro500: 26345
+    },
+    {
+      id: 9,
+      hp: 25,
+      voltaje: 440,
+      Sinfiltro: 8086,
+      filtro150: 21486,
+      filtro500: 29586
+    },
+    {
+      id: 10,
+      hp: 30,
+      voltaje: 440,
+      Sinfiltro: 8987,
+      filtro150: 20987,
+      filtro500: 30487
+    },
+    {
+      id: 11,
+      hp: 40,
+      voltaje: 440,
+      Sinfiltro: 12978,
+      filtro150: 25328,
+      filtro500: 45828
+    },
+    {
+      id: 12,
+      hp: 50,
+      voltaje: 440,
+      Sinfiltro: 25120,
+      filtro150: 37470,
+      filtro500: 57970
+    },
+    {
+      id: 13,
+      hp: 60,
+      voltaje: 440,
+      Sinfiltro: 16762,
+      filtro150: 49612,
+      filtro500: ''
+    },
+    {
+      id: 14,
+      hp: 75,
+      voltaje: 440,
+      Sinfiltro: 24604,
+      filtro150: 65454,
+      filtro500: ''
+    },
+    {
+      id: 15,
+      hp: 100,
+      voltaje: 440,
+      Sinfiltro: 27688,
+      filtro150: 79638,
+      filtro500: ''
+    },
+    {
+      id: 16,
+      hp: 150,
+      voltaje: 440,
+      Sinfiltro: 61595,
+      filtro150: '',
+      filtro500: ''
+    },
+    {
+      id: 17,
+      hp: 250,
+      voltaje: 440,
+      Sinfiltro: 103828,
+      filtro150: '',
+      filtro500: ''
+    }
+  ],
+  variadorSolar: [
+    {
+      id: 1,
+      hp: 2,
+      voltaje: 220,
+      descripcion: '3 HP trifasico 220',
+      amp: 10,
+      precio: 7840
+    },
+    {
+      id: 2,
+      hp: 3,
+      voltaje: 220,
+      descripcion: '5 HP trifasico 220',
+      amp: 16,
+      precio: 12800
+    },
+    {
+      id: 3,
+      hp: 5,
+      voltaje: 220,
+      descripcion: '7.5 HP trifasico 220',
+      amp: 20,
+      precio: 17500
+    },
+    {
+      id: 4,
+      hp: 7.5,
+      voltaje: 220,
+      descripcion: '10 HP trifasico 220',
+      amp: 30,
+      precio: 23345
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 440,
+      descripcion: '10 HP trifasico 440',
+      amp: 18.5,
+      precio: 15950
+    },
+    {
+      id: 6,
+      hp: 10,
+      voltaje: 440,
+      descripcion: '15 HP trifasico 440',
+      amp: 25,
+      precio: 19800
+    },
+    {
+      id: 7,
+      hp: 15,
+      voltaje: 440,
+      descripcion: '20 HP trifasico 440',
+      amp: 32,
+      precio: 23600
+    },
+    {
+      id: 8,
+      hp: 20,
+      voltaje: 440,
+      descripcion: '25 HP trifasico 440',
+      amp: 38,
+      precio: 31800
+    },
+    {
+      id: 9,
+      hp: 25,
+      voltaje: 440,
+      descripcion: '30 HP trifasico 440',
+      amp: 45,
+      precio: 36280
+    },
+    {
+      id: 10,
+      hp: 30,
+      voltaje: 440,
+      descripcion: '40 HP trifasico 440',
+      amp: 60,
+      precio: 45800
+    },
+    {
+      id: 11,
+      hp: 40,
+      voltaje: 440,
+      descripcion: '50 HP trifasico 440',
+      amp: 75,
+      precio: 52600
+    },
+    {
+      id: 12,
+      hp: 50,
+      voltaje: 440,
+      descripcion: '60 HP trifasico 440',
+      amp: 92,
+      precio: 63800
+    },
+    {
+      id: 13,
+      hp: 60,
+      voltaje: 440,
+      descripcion: '75 HP trifasico 440',
+      amp: 115,
+      precio: 80800
+    },
+    {
+      id: 14,
+      hp: 75,
+      voltaje: 440,
+      descripcion: '100 HP trifasico 440',
+      amp: 150,
+      precio: 84500
+    },
+    {
+      id: 15,
+      hp: 100,
+      voltaje: 440,
+      descripcion: '125 HP trifasico 440',
+      amp: 180,
+      precio: 94500
+    },
+    {
+      id: 16,
+      hp: 150,
+      voltaje: 440,
+      descripcion: '150 HP trifasico 440',
+      amp: 215,
+      precio: 108800
+    },
+    {
+      id: 17,
+      hp: 250,
+      voltaje: 440,
+      descripcion: '295HP trifasico',
+      amp: 300,
+      precio: 205000
+    }
+  ],
+  paneles: {
+    tipoPaneles: 'Canadian',
+    potencia: 555,
+    precio: 99.1,
+    cantidadxHP: [
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object],
+      [Object], [Object], [Object]
+    ]
+  }
+}
+1/27/2025, 9:58:38 PM modR: paneles
+1/27/2025, 9:58:38 PM bombas.modR: {
+  tipoPaneles: 'Canadian',
+  potencia: 555,
+  precio: 99.1,
+  cantidadxHP: [
+    { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 2, hp: 2, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 3, hp: 3, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    {
+      id: 4,
+      hp: 5,
+      voltaje: 220,
+      cantidadPaneles: 14,
+      string: [Array]
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 220,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 6,
+      hp: 7.5,
+      voltaje: 440,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 7,
+      hp: 10,
+      voltaje: 440,
+      cantidadPaneles: 28,
+      string: [Array]
+    },
+    {
+      id: 8,
+      hp: 15,
+      voltaje: 440,
+      cantidadPaneles: 32,
+      string: [Array]
+    },
+    {
+      id: 9,
+      hp: 20,
+      voltaje: 440,
+      cantidadPaneles: 42,
+      string: [Array]
+    },
+    {
+      id: 10,
+      hp: 25,
+      voltaje: 440,
+      cantidadPaneles: 56,
+      string: [Array]
+    },
+    {
+      id: 11,
+      hp: 30,
+      voltaje: 440,
+      cantidadPaneles: 70,
+      string: [Array]
+    },
+    {
+      id: 12,
+      hp: 40,
+      voltaje: 440,
+      cantidadPaneles: 84,
+      string: [Array]
+    },
+    {
+      id: 13,
+      hp: 50,
+      voltaje: 440,
+      cantidadPaneles: 112,
+      string: [Array]
+    },
+    {
+      id: 14,
+      hp: 60,
+      voltaje: 440,
+      cantidadPaneles: 140,
+      string: [Array]
+    },
+    {
+      id: 15,
+      hp: 75,
+      voltaje: 440,
+      cantidadPaneles: 168,
+      string: [Array]
+    },
+    {
+      id: 16,
+      hp: 100,
+      voltaje: 440,
+      cantidadPaneles: 224,
+      string: [Array]
+    },
+    {
+      id: 17,
+      hp: 125,
+      voltaje: 440,
+      cantidadPaneles: 280,
+      string: [Array]
+    },
+    {
+      id: 18,
+      hp: 150,
+      voltaje: 440,
+      cantidadPaneles: 322,
+      string: [Array]
+    },
+    {
+      id: 19,
+      hp: 175,
+      voltaje: 440,
+      cantidadPaneles: 378,
+      string: [Array]
+    },
+    {
+      id: 20,
+      hp: 200,
+      voltaje: 440,
+      cantidadPaneles: 434,
+      string: [Array]
+    },
+    {
+      id: 21,
+      hp: 250,
+      voltaje: 440,
+      cantidadPaneles: 546,
+      string: [Array]
+    }
+  ]
+}
+1/27/2025, 9:58:38 PM Se modificara: {
+  tipoPaneles: 'Canadian',
+  potencia: 555,
+  precio: 99.1,
+  cantidadxHP: [
+    { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 2, hp: 2, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    { id: 3, hp: 3, voltaje: 220, cantidadPaneles: 8, string: [Array] },
+    {
+      id: 4,
+      hp: 5,
+      voltaje: 220,
+      cantidadPaneles: 14,
+      string: [Array]
+    },
+    {
+      id: 5,
+      hp: 7.5,
+      voltaje: 220,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 6,
+      hp: 7.5,
+      voltaje: 440,
+      cantidadPaneles: 16,
+      string: [Array]
+    },
+    {
+      id: 7,
+      hp: 10,
+      voltaje: 440,
+      cantidadPaneles: 28,
+      string: [Array]
+    },
+    {
+      id: 8,
+      hp: 15,
+      voltaje: 440,
+      cantidadPaneles: 32,
+      string: [Array]
+    },
+    {
+      id: 9,
+      hp: 20,
+      voltaje: 440,
+      cantidadPaneles: 42,
+      string: [Array]
+    },
+    {
+      id: 10,
+      hp: 25,
+      voltaje: 440,
+      cantidadPaneles: 56,
+      string: [Array]
+    },
+    {
+      id: 11,
+      hp: 30,
+      voltaje: 440,
+      cantidadPaneles: 70,
+      string: [Array]
+    },
+    {
+      id: 12,
+      hp: 40,
+      voltaje: 440,
+      cantidadPaneles: 84,
+      string: [Array]
+    },
+    {
+      id: 13,
+      hp: 50,
+      voltaje: 440,
+      cantidadPaneles: 112,
+      string: [Array]
+    },
+    {
+      id: 14,
+      hp: 60,
+      voltaje: 440,
+      cantidadPaneles: 140,
+      string: [Array]
+    },
+    {
+      id: 15,
+      hp: 75,
+      voltaje: 440,
+      cantidadPaneles: 168,
+      string: [Array]
+    },
+    {
+      id: 16,
+      hp: 100,
+      voltaje: 440,
+      cantidadPaneles: 224,
+      string: [Array]
+    },
+    {
+      id: 17,
+      hp: 125,
+      voltaje: 440,
+      cantidadPaneles: 280,
+      string: [Array]
+    },
+    {
+      id: 18,
+      hp: 150,
+      voltaje: 440,
+      cantidadPaneles: 322,
+      string: [Array]
+    },
+    {
+      id: 19,
+      hp: 175,
+      voltaje: 440,
+      cantidadPaneles: 378,
+      string: [Array]
+    },
+    {
+      id: 20,
+      hp: 200,
+      voltaje: 440,
+      cantidadPaneles: 434,
+      string: [Array]
+    },
+    {
+      id: 21,
+      hp: 250,
+      voltaje: 440,
+      cantidadPaneles: 546,
+      string: [Array]
+    }
+  ]
+}
+1/27/2025, 9:58:38 PM datos a modificar: { precio: 99.9 }
+1/27/2025, 9:58:38 PM campo dataUpt key: precio value: 99.9
+1/27/2025, 9:58:38 PM Se modificara el campo: precio de  99.1  a  99.9
+1/27/2025, 9:58:38 PM Bombas despues de cambios: undefined
+1/27/2025, 9:58:38 PM JSON file has been saved from Upt Bombas.
+1/27/2025, 9:58:38 PM Archivo JSON actualizado exitosamente
+1/27/2025, 9:58:38 PM   direccion@weslaco.com.mx Modifico Tabla: panelT e item: Canadian
+1/27/2025, 9:58:57 PM LAST ITEM { rangMod: 'cantidadxHP', modelo: '1', tUpt: 'panM' }
+1/27/2025, 9:58:57 PM data updt { cantidadPaneles: 9 }
+1/27/2025, 9:58:57 PM Se modificara: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [ 1, 8 ] }
+1/27/2025, 9:58:57 PM datos a modificar: { cantidadPaneles: 9 }
+1/27/2025, 9:58:57 PM campo dataUpt key: cantidadPaneles value: 9
+1/27/2025, 9:58:57 PM Se modificara el campo: cantidadPaneles de  8  a  9
+1/27/2025, 9:58:57 PM Bombas despues de cambios: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 9, string: [ 1, 8 ] }
+1/27/2025, 9:58:57 PM JSON file has been saved from Upt Bombas.
+1/27/2025, 9:58:57 PM Archivo JSON actualizado exitosamente
+1/27/2025, 9:58:57 PM   direccion@weslaco.com.mx Modifico Tabla: panM e item: 1
+1/27/2025, 9:59:04 PM LAST ITEM { rangMod: 'cantidadxHP', modelo: '1', tUpt: 'panM' }
+1/27/2025, 9:59:04 PM data updt { cantidadPaneles: 8 }
+1/27/2025, 9:59:04 PM Se modificara: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 9, string: [ 1, 8 ] }
+1/27/2025, 9:59:04 PM datos a modificar: { cantidadPaneles: 8 }
+1/27/2025, 9:59:04 PM campo dataUpt key: cantidadPaneles value: 8
+1/27/2025, 9:59:04 PM Se modificara el campo: cantidadPaneles de  9  a  8
+1/27/2025, 9:59:04 PM Bombas despues de cambios: { id: 1, hp: 1, voltaje: 220, cantidadPaneles: 8, string: [ 1, 8 ] }
+1/27/2025, 9:59:04 PM JSON file has been saved from Upt Bombas.
+1/27/2025, 9:59:04 PM Archivo JSON actualizado exitosamente
+1/27/2025, 9:59:04 PM   direccion@weslaco.com.mx Modifico Tabla: panM e item: 1

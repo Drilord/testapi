@@ -55,7 +55,7 @@ try {
     const dataUpdt=reqbody.uptValue;
     console.log(new Date().toLocaleString('en-US'),'data updt',dataUpdt);
     //if(lastItem.tUpt=='korUl' || lastItem.tUpt=='kolosUl'|| lastItem.tUpt=='eqBombaUl'){
-    succ=updtjson(lastItem.rangMod, lastItem.modelo, dataUpdt ,lastItem.tUpt)
+    succ= await updtjson(lastItem.rangMod, lastItem.modelo, dataUpdt ,lastItem.tUpt);
     //}
     if(succ===true){
     res.json({ message: `Se modificaron los datos.`, succ : succ }); // Send data back to the client
@@ -271,9 +271,13 @@ async function updtjson(modR, modelP, dataUpdt ,tUpdt) {
       modeltoUpt = modRtoUp.find(model => model.id == modelPint);
     }
     if (tUpdt == 'panelT') {
-      bombas = data.bomSol.solar.paneles;
+      bombas = data.bomSol.solar;
+      console.log(new Date().toLocaleString('en-US'), 'tUpdt:', tUpdt);
+      console.log(new Date().toLocaleString('en-US'), 'bombas:', bombas);
+      console.log(new Date().toLocaleString('en-US'), 'modR:', modR);
+      console.log(new Date().toLocaleString('en-US'), 'bombas.modR:', bombas[modR]);
       modRtoUp = bombas[modR];
-      modeltoUpt = Array.isArray(modRtoUp) ? modRtoUp.find(model => model.tipoPaneles == modelP) : null;
+      modeltoUpt = modRtoUp; 
     }
     if (!modRtoUp) {
       console.log(new Date().toLocaleString('en-US'), 'No se encontro el conjunto de datos');
@@ -294,19 +298,19 @@ async function updtjson(modR, modelP, dataUpdt ,tUpdt) {
       }
       });
     }
-    console.log(new Date().toLocaleString('en-US'), 'Bombas 0 modelo 0 despues de cambios:', modRtoUp[0]);
+    console.log(new Date().toLocaleString('en-US'), 'Bombas despues de cambios:', modRtoUp[0]);
     
     // Write the updated data back to the file
     
-    jsf.writeFile(bomPath, data, (err) => {
-      if (err) {
-        console.error(new Date().toLocaleString('en-US'), 'Error writing JSON file:', err);
-      } else {
-        console.log(new Date().toLocaleString('en-US'), 'JSON file has been saved from Upt Bombas.');
-      }
-    });
-    console.log(new Date().toLocaleString('en-US'), 'Archivo JSON actualizado exitosamente');
-    return true;
+    try {
+      await jsf.writeFile(bomPath, data);
+      console.log(new Date().toLocaleString('en-US'), 'JSON file has been saved from Upt Bombas.');
+      console.log(new Date().toLocaleString('en-US'), 'Archivo JSON actualizado exitosamente');
+      return true;
+    } catch (err) {
+      console.error(new Date().toLocaleString('en-US'), 'Error writing JSON file:', err);
+      return false;
+    }
     
   } catch (err) {
     console.error(new Date().toLocaleString('en-US'), 'Error updating JSON:', err);
