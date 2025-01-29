@@ -37,7 +37,44 @@ exp.use('/vende', vde);
 const mdD= express.Router();
 exp.use('/cmbeos',mdD)
 
-//ruteo
+//ruteo 
+mdD.post('/newven',async (req,res)=>{
+  const token = req.cookies?.auth_token;
+  if (!token) {
+    return res.status(401).json({ message: 'No token provided' });
+  }
+  try {
+  const decoded = jwt.verify(token, secretKey); // Verify the token
+  if(decoded.aLev==acsLv){
+  const user = decoded.user; // Access the payload data
+  const reqbody=req.body
+  const userDt = reqbody.usr;
+  const vendDt = reqbody.vend
+  let adUsr,adVen;
+
+  
+  
+
+if(userDt.vend===true){
+  adVen= await addVende(vendDt);
+  adUsr= await addUsr(userDt,adVen);
+  succ= adUsr===true && adVen!==false? true:false;
+  }else{
+    adUsr= await addUsr(userDt,'');
+    succ= adUsr===true? true:false;
+
+  }
+    if(succ===true){
+    res.json({ message: `Se modificaron los datos.`, succ : succ }); // Send data back to the client
+    console.log(new Date().toLocaleString('en-US'),' ',user,`agrego al usuario: ${userDt.mail} e item: ${lastItem.modelo}`);
+   }
+  }
+}catch (err) {
+  console.error(new Date().toLocaleString('en-US'),"Token Verification Error chg:", err); // VERY important to log the error
+  return res.status(401).json({ message: 'Invalid token' });
+ } 
+});
+
 mdD.post('/',async (req,res)=>{
   const token = req.cookies?.auth_token;
  
@@ -318,6 +355,72 @@ async function updtjson(modR, modelP, dataUpdt ,tUpdt) {
   }
 }
 
+async function addVende(vendDt){
+   try{
+      const data = await jsf.readFile(bomPath);
+      if (!data) {
+        console.log(new Date().toLocaleString('en-US'), 'No se encontro el archivo JSON');
+        return false;
+      }
+      const vendedores= data.bomSol.vendedores;
+      const newVId = vendedores.length + 1;
+      const newVend = {
+        id: newVId,
+        ...vendDt
+      };
+      vendedores.push(newVend);
+    try {
+      await jsf.writeFile(bomPath, data);
+            console.log(new Date().toLocaleString('en-US'), ' vende DB actualizada exitosamente');
+      return true;
+    } catch (err) {
+      console.error(new Date().toLocaleString('en-US'), 'Error Guardando al Vendedor en DB:', err);
+      return false;
+    }
+
+   
+
+
+
+   }catch (err){}
+   console.error(new Date().toLocaleString('en-US'), 'Error updating JSON:', err);
+   return false;
+   
+
+
+}
+
+async function addUsr(userDt,newId){
+  try{
+  vendedores.push(newVend);
+  const usrData = await jsf.readFile(vendePath);
+  if (!usrData) {
+    console.log(new Date().toLocaleString('en-US'), 'No se encontro el archivo JSON');
+    return false;
+  }
+  const users = usrData.vendedores;
+  const newUId = users.length + 1;
+  const newUVend = {
+    id: newUId,
+    ...userDt,
+    vendId:newId
+  };
+  users.push(newUVend);
+  try {
+    await jsf.writeFile(vendePath, usrData);
+          console.log(new Date().toLocaleString('en-US'), ' vende DB actualizada exitosamente');
+    return true;
+  } catch (err) {
+    console.error(new Date().toLocaleString('en-US'), 'Error Guardando al Vendedor en DB:', err);
+    return false;
+  }
+
+}catch(err){
+  console.error(new Date().toLocaleString('en-US'), 'Error updating JSON:', err);
+   return false;
+}  
+
+}
 exp.listen(PORT, ()=>{
     console.log(new Date().toLocaleString('en-US'),'Servidor escuchando en: ', PORT)
 });
