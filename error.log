@@ -1,0 +1,102 @@
+1/28/2025, 10:53:11 PM Token Verification Error enemy  : JsonWebTokenError: invalid signature
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:171:19
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:192:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12)
+1/29/2025, 2:53:16 PM Token Verification Error enemy  : TokenExpiredError: jwt expired
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:190:21
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:192:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12) {
+  expiredAt: 2025-01-29T16:53:17.000Z
+}
+1/29/2025, 8:22:36 PM Token Verification Error enemy  : JsonWebTokenError: invalid signature
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:171:19
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:197:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12)
+1/29/2025, 8:24:50 PM Error updating JSON: ReferenceError: vendedores is not defined
+    at addUsr (/home/ubuntu/testapi/index.js:414:23)
+    at async /home/ubuntu/testapi/index.js:62:12
+1/29/2025, 8:59:34 PM Token Verification Error enemy  : JsonWebTokenError: invalid signature
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:171:19
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:197:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12)
+1/30/2025, 9:03:59 AM Token Verification Error enemy  : JsonWebTokenError: invalid signature
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:171:19
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:199:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12)
+1/30/2025, 9:06:05 AM Token Verification Error enemy  : JsonWebTokenError: invalid signature
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:171:19
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:200:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12)
+1/30/2025, 10:48:01 AM Error updating JSON: TypeError: Cannot read properties of undefined (reading 'pw')
+    at addUsr (/home/ubuntu/testapi/index.js:423:61)
+    at async /home/ubuntu/testapi/index.js:62:12
+1/30/2025, 10:48:02 AM Error updating JSON: TypeError: Cannot read properties of undefined (reading 'pw')
+    at addUsr (/home/ubuntu/testapi/index.js:423:61)
+    at async /home/ubuntu/testapi/index.js:62:12
+1/30/2025, 10:48:04 AM Error updating JSON: TypeError: Cannot read properties of undefined (reading 'pw')
+    at addUsr (/home/ubuntu/testapi/index.js:423:61)
+    at async /home/ubuntu/testapi/index.js:62:12
+1/30/2025, 11:13:19 AM Token Verification Error enemy  : JsonWebTokenError: invalid signature
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:171:19
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:241:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12)
+1/30/2025, 7:45:15 PM Token Verification Error enemy  : JsonWebTokenError: invalid signature
+    at /home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:171:19
+    at getSecret (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:97:14)
+    at module.exports [as verify] (/home/ubuntu/testapi/node_modules/jsonwebtoken/verify.js:101:10)
+    at /home/ubuntu/testapi/index.js:241:25
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at next (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:149:13)
+    at Route.dispatch (/home/ubuntu/testapi/node_modules/express/lib/router/route.js:119:3)
+    at Layer.handle [as handle_request] (/home/ubuntu/testapi/node_modules/express/lib/router/layer.js:95:5)
+    at /home/ubuntu/testapi/node_modules/express/lib/router/index.js:284:15
+    at Function.process_params (/home/ubuntu/testapi/node_modules/express/lib/router/index.js:346:12)
