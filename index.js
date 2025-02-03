@@ -11,6 +11,7 @@ const jwt = require('jsonwebtoken');
 const crypto = require('crypto');
 const secretKey = crypto.randomBytes(64).toString('hex');
 const cookieParser = require('cookie-parser');
+
 const corsOptions = {
                        origin: 'https://localhost', // Only allow requests from your frontend
                       credentials: true, // Important for cookies
@@ -38,6 +39,54 @@ const mdD= express.Router();
 exp.use('/cmbeos',mdD)
 
 //ruteo 
+mdD.put('/newven/:uid',async (req,res)=>{
+  const token = req.cookies?.auth_token;
+  if (!token) {
+    return res.status(401).json({ message: 'No token provided' });
+  }
+  try {
+    const decoded = jwt.verify(token, secretKey); // Verify the token
+    if(decoded.aLev==3){
+    const user = decoded.user; // Access the payload data
+    const reqbody=req.body
+    const userDt = reqbody.usr;
+    const vendDt = reqbody.vend;
+    const flag = reqbody.flag;
+    let adUsr,adVen;
+    const vtgtId = req.params.uid;
+    const mod = true;
+    const utgtId = userDt.id;
+  if(flag===true){
+    adVen= await addVende(vendDt,mod,vtgtId);
+    }
+    else{adVen=userDt.vendId;}
+    adUsr= await addUsr(userDt,utgtId,mod);
+    succ= adUsr===true && adVen!==null? true:false;
+  
+    
+      if(succ===true){
+      res.json({ message: `Se modifico el usuario.`, succ : succ }); // Send data back to the client
+      console.log(new Date().toLocaleString('en-US'),
+                  ' ',
+                  user,
+                  `modifico el usuario: ${userDt?.mail} ${flag===true?` vendedor: ${vendDt.nombre}`:''}`);
+     }else{
+      res.status(400).json({ message: `Error al modificar usuario.`, succ : succ }); // Send data back to the client
+      console.log(new Date().toLocaleString('en-US'),`Error al modificar el usuario. `);
+     }
+    }else{
+      console.log(new Date().toLocaleString('en-US'),`${user} intento modificar un usuario sin permiso. `);
+      return res.status(401).json({ message: 'El Usuario no esta autorizado' });
+    }
+  }catch (err) {
+    console.error(new Date().toLocaleString('en-US'),"Token Verification Error chg user:", err); // VERY important to log the error
+    return res.status(401).json({ message: 'Invalid token' });
+   } 
+
+
+
+});
+
 mdD.post('/newven',async (req,res)=>{
   const token = req.cookies?.auth_token;
   if (!token) {
@@ -273,7 +322,7 @@ rtdisc.get('/:pwd', async (req, res)=>{
   }  
   
 });
- const PORT = process.env.PORT|| 3000;
+ 
  
 
  async function readjson(filePath) {
@@ -404,7 +453,7 @@ async function updtjson(modR, modelP, dataUpdt ,tUpdt) {
   }
 }
 
-async function addVende(vendDt){
+async function addVende(vendDt,modFlg,idV){
    try{
       const data = await jsf.readFile(bomPath);
       if (!data) {
@@ -412,6 +461,10 @@ async function addVende(vendDt){
         return null;
       }
       const vendedores= data.bomSol.vendedores;
+      const vendId = idV;
+      const vendMod = vendedores.find(vendedor => parseInt(vendedor.id) === parseInt(vendId));
+      if(!vendMod){modFlg=false;}
+      if(!modFlg){
       let newVId = vendedores.length + 1;
       const existingVend = vendedores.find(vendedor => parseInt(vendedor.id) === newVId);
       if (existingVend) {
@@ -425,6 +478,19 @@ async function addVende(vendDt){
         ...vendDt
       };
       vendedores.push(newVend);
+    }else if(modFlg===true){
+      
+      
+      const entriesArray=Object.entries(vendDt);
+      entriesArray.forEach(([key, value]) => {
+        console.log(new Date().toLocaleString('en-US'), `campo vendDt key: ${key} value:`, value);
+      if (value!=vendDt[key]) {
+        console.log(new Date().toLocaleString('en-US'), 'Se modificara el campo:', key,'de ',vendMod[key],' a ',value);
+        vendMod[key] = value;
+      }
+      });
+      newVId=vendDt.id
+    }
     try {
       await jsf.writeFile(bomPath, data);
             console.log(new Date().toLocaleString('en-US'), ' Vendedor agregado a DB exitosamente');
@@ -433,20 +499,12 @@ async function addVende(vendDt){
       console.error(new Date().toLocaleString('en-US'), 'Error Guardando al Vendedor en DB:', err);
       return null;
     }
-
-   
-
-
-
    }catch (err){}
    console.error(new Date().toLocaleString('en-US'), 'Error updating JSON:', err);
    return false;
-   
-
-
 }
 
-async function addUsr(userDt,newId){
+async function addUsr(userDt,newId,modFlg){
   try{
   const usrData = await jsf.readFile(vendePath);
   if (!usrData) {
@@ -454,6 +512,7 @@ async function addUsr(userDt,newId){
     return false;
   }
   const users = usrData.vendedores;
+  if(!modFlg){
   let newUId = users.length + 1;
   const existingUsr = users.find(vendedor => parseInt(vendedor.id) === newUId);
       if (existingUsr) {
@@ -468,6 +527,22 @@ async function addUsr(userDt,newId){
     vendId:newId
   };
   users.push(newUVend);
+}else if(modFlg===true){
+  const usrId = newId; 
+  const usrMod = users.find(usr => parseInt(usr.id) === parseInt(usrId));
+  if (!usrMod) {
+    console.log(new Date().toLocaleString('en-US'), 'No se encontro el vendedor a modificar');
+    return null;
+  }
+  const entriesArray=Object.entries(userDt);
+  entriesArray.forEach(([key, value]) => {
+    console.log(new Date().toLocaleString('en-US'), `campo vendDt key: ${key} value:`, value);
+  if (value!=userDt[key]) {
+    console.log(new Date().toLocaleString('en-US'), 'Se modificara el campo:', key,'de ',usrMod[key],' a ',value);
+    usrMod[key] = value;
+  }
+  });
+}
   try {
     await jsf.writeFile(vendePath, usrData);
           console.log(new Date().toLocaleString('en-US'), ' vende DB actualizada exitosamente');
@@ -483,6 +558,8 @@ async function addUsr(userDt,newId){
 }  
 
 }
+const PORT = process.env.PORT|| 3000;
+  
 exp.listen(PORT, ()=>{
     console.log(new Date().toLocaleString('en-US'),'Servidor escuchando en: ', PORT)
 });
