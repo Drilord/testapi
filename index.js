@@ -39,7 +39,45 @@ const mdD= express.Router();
 exp.use('/cmbeos',mdD)
 
 //ruteo 
-mdD.put('/newven/:uid',async (req,res)=>{
+mdD.delete('/newven/:uid/:vid',async (req,res)=>{
+  const vtgtId = req.params.vid
+  const utgtId = req.params.uid;
+  const token = req.cookies?.auth_token;
+  let delVen
+  if (!token) {
+    return res.status(401).json({ message: 'No token provided' });
+  } 
+  try {
+    const decoded = jwt.verify(token, secretKey); // Verify the token
+    if(decoded.aLev==3){
+    const user = decoded.user; // Access the payload data
+    const delUsr= await delUser(utgtId);
+    if(vtgtId!='none'){
+    delVen= await delVend(vtgtId);
+    }else{delVen=true;}
+    succ= delUsr===true && delVen===true? true:false;
+    
+      if(succ===true){
+      res.json({ message: `Se elimino el usuario.`, succ : succ }); // Send data back to the client
+      console.log(new Date().toLocaleString('en-US'),
+                  ' ',
+                  user,
+                  `elimino el usuario: ${utgtId} y vendedor: ${vtgtId}`);
+     }else{
+      res.status(400).json({ message: `Error al eliminar usuario.`, succ : succ }); // Send data back to the client
+      console.log(new Date().toLocaleString('en-US'),`Error al eliminar el usuario. `);
+     }
+    }else{
+      console.log(new Date().toLocaleString('en-US'),`${user} intento eliminar un usuario sin permiso. `);
+      return res.status(401).json({ message: 'El Usuario no esta autorizado' });
+    }
+  } catch (err) {
+    console.error(new Date().toLocaleString('en-US'), "Error eliminando usuario y vendedor:", err);
+    return res.status(500).json({ message: 'Error interno del servidor' });
+  }
+});
+mdD.put('/newven/:vid',async (req,res)=>{
+  let mod;
   const token = req.cookies?.auth_token;
   if (!token) {
     return res.status(401).json({ message: 'No token provided' });
@@ -52,15 +90,30 @@ mdD.put('/newven/:uid',async (req,res)=>{
     const userDt = reqbody.usr;
     const vendDt = reqbody.vend;
     const flag = reqbody.flag;
-    let adUsr,adVen;
-    const vtgtId = req.params.uid;
-    const mod = true;
+    let adUsr,adVen,delVen;
+    let vtgtId = req.params.vid;
     const utgtId = userDt.id;
+    if(vtgtId==='assign'){
+      mod = false
+      vtgtId = '';
+    }else{  
+      mod = true;
+    }
   if(flag===true){
     adVen= await addVende(vendDt,mod,vtgtId);
     }
-    else{adVen=userDt.vendId;}
-    adUsr= await addUsr(userDt,utgtId,mod);
+    else if(flag===false){
+      if(userDt.vendId==='delete'){
+        delVen= await delVend(vendDt.id);
+        if(delVen===true){
+          console.log(new Date().toLocaleString('en-US'),'Vendedor eliminado por:',user);
+        }else{
+          res.send(400).json({ message: `Error al eliminar vendedor.`, succ : false }); // Send data back to the client
+          throw new Error(new Date().toLocaleString('en-US'),'Error al eliminar vendedor');
+        }
+      } 
+    }  
+    adUsr= await addUsr(userDt,utgtId,true,delVen?'':adVen);
     succ= adUsr===true && adVen!==null? true:false;
   
     
@@ -182,12 +235,8 @@ mdD.get('/gtus', async (req, res)=>{
     
     const data = await readjson(vendePath);
     const usArr=data.vendedores;
-    const usArrCp = JSON.parse(JSON.stringify(usArr));
-    usArrCp.forEach(user => {
-       user.pw='';  
-    });
 
-        res.send(JSON.stringify(usArrCp)); 
+        res.send(JSON.stringify(usArr)); 
 
       }else{
         console.error(new Date().toLocaleString('en-US'),' ',user,'No tiene permiso de consultar datos de usuario');
@@ -229,6 +278,30 @@ cots.get('/', async (req, res)=>{
         console.error('Error leyendo el archivo json:', error);
         res.status(500).send('Error al leer los datos');
       }
+});
+cots.post('/new',async (req,res)=>{
+  const token = req.cookies?.auth_token;
+  if (!token) {
+    return res.status(401).json({ message: 'No token provided' });
+  }
+  try {
+  const decoded = jwt.verify(token, secretKey); // Verify the token
+  
+  const user = decoded.user; // Access the payload data
+  const reqbody=req.body
+  const newCot= await newcot(reqbody);
+  if(newCot){
+    res.json({ message: `Se agrego la cotizacion.`, succ : true }); // Send data back to the client
+    console.log(new Date().toLocaleString('en-US'),' ',user,`agrego la cotizacion: ${reqbody?.id}`);
+    }else{
+    res.status(400).json({ message: `Error al agregar cotizacion.`, succ : false }); // Send data back to the client
+    console.log(new Date().toLocaleString('en-US'),`Error al agregar la cotizacion. `);
+    }
+  }catch (err) {
+    console.error(new Date().toLocaleString('en-US'),"Token Verification Error chg:", err); // VERY important to log the error
+    return res.status(401).json({ message: 'Invalid token' });
+   } 
+
 });
 
 
@@ -323,6 +396,31 @@ rtdisc.get('/:pwd', async (req, res)=>{
   
 });
  
+async function newcot(cot){
+  try { 
+    const data = await jsf.readFile(cotsPath);
+    if (!data) {
+      console.log(new Date().toLocaleString('en-US'), 'No se encontro el archivo JSON');
+      return false;
+    }
+    const cots = data.cots;
+    const newCot = {
+      ...cot
+    };
+    cots.push(newCot);
+    try {
+      await jsf.writeFile(cotsPath, data);
+      console.log(new Date().toLocaleString('en-US'), 'Cotizacion agregada a DB exitosamente');
+      return true;
+    } catch (err) {
+      console.error(new Date().toLocaleString('en-US'), 'Error Guardando la Cotizacion en DB:', err);
+      return false;
+    }
+  } catch (err) {
+    console.error(new Date().toLocaleString('en-US'), 'Error updating JSON:', err);
+    return false;
+  }
+}
  
 
  async function readjson(filePath) {
@@ -453,7 +551,76 @@ async function updtjson(modR, modelP, dataUpdt ,tUpdt) {
   }
 }
 
+
+async function delVend(vtgtId){
+try{
+   const data = await jsf.readFile(bomPath);
+  if (!data) {
+    console.log(new Date().toLocaleString('en-US'), 'No se encontro el archivo JSON');
+    return false;
+  }
+  const vendedores= data.bomSol.vendedores;
+  const vendId = vtgtId;
+  const vendMod = vendedores.find(vendedor => parseInt(vendedor.id) === parseInt(vendId));
+  if (!vendMod) {
+    console.log(new Date().toLocaleString('en-US'), 'No se encontro el vendedor a eliminar');
+    return false;
+  }
+  const vendIndex = vendedores.findIndex(vendedor => parseInt(vendedor.id) === parseInt(vendId));
+  vendedores.splice(vendIndex, 1);
+  try {
+    await jsf.writeFile(bomPath, data);
+    console.log(new Date().toLocaleString('en-US'), `Vendedor ${vendMod.nombre} id:${vendMod.id} eliminado de DB exitosamente`);
+    return true;
+  } catch (err) {
+    console.error(new Date().toLocaleString('en-US'), 'Error Guardando al Vendedor en DB:', err);
+    return false;
+  }
+
+}catch(err){
+  console.error(new Date().toLocaleString('en-US'), 'Error deleting Vendedor JSON:', err);
+  return false;
+}
+
+  
+}
+async function delUser(utgtId){
+  try{
+    const usrData = await jsf.readFile(vendePath);
+    if (!usrData) {
+      console.log(new Date().toLocaleString('en-US'), 'No se encontro el archivo JSON');
+      return false;
+    }
+    const users = usrData.vendedores;
+    const usrId = utgtId;
+    console.log(new Date().toLocaleString('en-US'), 'usrId:', usrId);
+    const usrMod = users.find(usr => parseInt(usr.id) === parseInt(usrId));
+    console.log(new Date().toLocaleString('en-US'), 'usrMod:', usrMod);
+    if (!usrMod) {
+      console.log(new Date().toLocaleString('en-US'), 'No se encontro el usuario a eliminar');
+      return false;
+    }
+    const usrIndex = users.findIndex(usr => parseInt(usr.id) === parseInt(usrId));
+    users.splice(usrIndex, 1);
+    try {
+      await jsf.writeFile(vendePath, usrData);
+      console.log(new Date().toLocaleString('en-US'), `Usuario:${usrMod.mail} id:${usrMod.id}  eliminado de DB exitosamente`);
+      return true;
+    } catch (err) {
+      console.error(new Date().toLocaleString('en-US'), 'Error Guardando al Usuario en DB:', err);
+      return false;
+    }
+  
+  }catch(err){
+    console.error(new Date().toLocaleString('en-US'), 'Error deleting Usuario JSON:', err);
+    return false;
+  }
+
+}
+
+//solo el id ,tru,undefined
 async function addVende(vendDt,modFlg,idV){
+  let newVId;
    try{
       const data = await jsf.readFile(bomPath);
       if (!data) {
@@ -465,17 +632,22 @@ async function addVende(vendDt,modFlg,idV){
       const vendMod = vendedores.find(vendedor => parseInt(vendedor.id) === parseInt(vendId));
       if(!vendMod){modFlg=false;}
       if(!modFlg){
-      let newVId = vendedores.length + 1;
+      newVId = vendedores.length + 1;
+      console.log(new Date().toLocaleString('en-US'), ' leght newVId:', newVId);
       const existingVend = vendedores.find(vendedor => parseInt(vendedor.id) === newVId);
+      console.log(new Date().toLocaleString('en-US'), 'existingVend:', existingVend);
       if (existingVend) {
         const vendedorIds = vendedores.map(vendedor => parseInt(vendedor.id));
+        console.log(new Date().toLocaleString('en-US'), 'vendedorIds:', vendedorIds);
         const missingId = vendedorIds.sort((a, b) => a - b).find((id, index, array) => id + 1 !== array[index + 1]) + 1 || vendedores.length + 1;
+        console.log(new Date().toLocaleString('en-US'), 'missingId:', missingId);
         newVId = missingId;
       }
-
+       
       const newVend = {
         id: String(newVId),
-        ...vendDt
+        ...vendDt,
+        id: String(newVId) // Ensure the id is overwritten
       };
       vendedores.push(newVend);
     }else if(modFlg===true){
@@ -484,7 +656,7 @@ async function addVende(vendDt,modFlg,idV){
       const entriesArray=Object.entries(vendDt);
       entriesArray.forEach(([key, value]) => {
         console.log(new Date().toLocaleString('en-US'), `campo vendDt key: ${key} value:`, value);
-      if (value!=vendDt[key]) {
+      if (value!=vendMod[key]) {
         console.log(new Date().toLocaleString('en-US'), 'Se modificara el campo:', key,'de ',vendMod[key],' a ',value);
         vendMod[key] = value;
       }
@@ -503,8 +675,8 @@ async function addVende(vendDt,modFlg,idV){
    console.error(new Date().toLocaleString('en-US'), 'Error updating JSON:', err);
    return false;
 }
-
-async function addUsr(userDt,newId,modFlg){
+                      //changes usid true ''
+async function addUsr(userDt,newId,modFlg,vIMod){
   try{
   const usrData = await jsf.readFile(vendePath);
   if (!usrData) {
@@ -537,12 +709,17 @@ async function addUsr(userDt,newId,modFlg){
   const entriesArray=Object.entries(userDt);
   entriesArray.forEach(([key, value]) => {
     console.log(new Date().toLocaleString('en-US'), `campo vendDt key: ${key} value:`, value);
-  if (value!=userDt[key]) {
+  if (value!=usrMod[key]) {
+    if (key === 'pw') {
+      value = crypto.createHash('sha256').update(value).digest('hex');
+    }
     console.log(new Date().toLocaleString('en-US'), 'Se modificara el campo:', key,'de ',usrMod[key],' a ',value);
     usrMod[key] = value;
   }
   });
+  usrMod.vendId=vIMod;
 }
+
   try {
     await jsf.writeFile(vendePath, usrData);
           console.log(new Date().toLocaleString('en-US'), ' vende DB actualizada exitosamente');
