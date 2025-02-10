@@ -1,0 +1,71 @@
+2/6/2025, 7:32:13 PM Servidor escuchando en:  3000
+Request to /api/vende/amoen
+2/6/2025, 7:33:48 PM Origin /vende  signed in user:  dev
+2/6/2025, 7:42:56 PM Cotizacion agregada a DB exitosamente
+2/6/2025, 7:42:56 PM   dev agrego la cotizacion: BomSolA-CL-ElEL-7.5
+2/6/2025, 8:15:18 PM Cotizacion agregada a DB exitosamente
+2/6/2025, 8:15:18 PM   dev agrego la cotizacion: BomSolA-CL-ElEL-7.5
+2/6/2025, 8:16:26 PM Cotizacion agregada a DB exitosamente
+2/6/2025, 8:16:26 PM   dev agrego la cotizacion: SolA-CL-ElEL-7.5
+Request to /api/vende/amoen
+2/6/2025, 8:17:24 PM entered /vende/amoen  signed in user: dev
+Request to /api/vende/amoen
+2/6/2025, 8:18:00 PM Origin /vende  signed in user:  direccion@weslaco.com.mx
+Request to /api/vende/amoen
+2/6/2025, 8:20:06 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+2/6/2025, 8:21:10 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+2/6/2025, 8:21:35 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+2/6/2025, 8:22:29 PM  leght newVId: 10
+2/6/2025, 8:22:29 PM existingVend: undefined
+2/6/2025, 8:22:29 PM  Vendedor agregado a DB exitosamente
+2/6/2025, 8:22:29 PM  vende DB actualizada exitosamente
+2/6/2025, 8:22:29 PM   direccion@weslaco.com.mx agrego al usuario: devVen  vendedor: Pamela Chu
+2/6/2025, 8:22:44 PM  vende DB actualizada exitosamente
+2/6/2025, 8:22:44 PM   direccion@weslaco.com.mx agrego al usuario: devComp 
+2/6/2025, 8:23:45 PM  leght newVId: 11
+2/6/2025, 8:23:45 PM existingVend: undefined
+2/6/2025, 8:23:45 PM  Vendedor agregado a DB exitosamente
+2/6/2025, 8:23:45 PM  vende DB actualizada exitosamente
+2/6/2025, 8:23:45 PM   direccion@weslaco.com.mx agrego al usuario: devger  vendedor: Rudy Simon
+Request to /api/vende/amoen
+2/6/2025, 8:25:00 PM entered /vende/amoen  signed in user: direccion@weslaco.com.mx
+Request to /api/vende/amoen
+2/6/2025, 8:25:23 PM Origin /vende  signed in user:  devVen
+Request to /api/vende/amoen
+2/6/2025, 8:25:35 PM entered /vende/amoen  signed in user: devVen
+Request to /api/vende/amoen
+2/6/2025, 8:25:35 PM entered /vende/amoen  signed in user: devVen
+Request to /api/vende/amoen
+2/6/2025, 8:26:44 PM Origin /vende  signed in user:  devger
+Request to /api/vende/amoen
+2/6/2025, 8:29:10 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 8:32:15 PM entered /vende/amoen  signed in user: devger
+2/6/2025, 8:32:45 PM Cotizacion agregada a DB exitosamente
+2/6/2025, 8:32:45 PM   devger agrego la cotizacion: SolA-CL-PiRU-7.5
+2/6/2025, 8:33:01 PM Cotizacion agregada a DB exitosamente
+2/6/2025, 8:33:01 PM   devger agrego la cotizacion: SolA-CL-PiRU-100
+Request to /api/vende/amoen
+2/6/2025, 8:36:52 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:23:02 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:25:29 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:27:44 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:28:43 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:30:44 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:32:06 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:33:17 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:33:17 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:37:56 PM entered /vende/amoen  signed in user: devger
+Request to /api/vende/amoen
+2/6/2025, 11:39:12 PM entered /vende/amoen  signed in user: devger
